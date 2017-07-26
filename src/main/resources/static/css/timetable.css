@@ -224,7 +224,7 @@ Main Components
   }
   .cd-schedule .events .single-event {
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     /* top position and height will be set using js */
     width: calc(100% + 2px);
     left: -1px;
@@ -278,7 +278,7 @@ Main Components
 
 @media only screen and (min-width: 800px) {
   .cd-schedule .class-name {
-    font-size: 2rem;
+    font-size: 1.5vw;
   }
 }
 
@@ -356,7 +356,7 @@ Main Components
 
 .cd-schedule .event-modal {
   position: fixed;
-  z-index: 3;
+  z-index: 4;
   top: 0;
   right: 0;
   height: 100%;
@@ -386,7 +386,7 @@ Main Components
 
 .cd-schedule .event-modal .header .content {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   /* vertically center inside its parent */
   display: table-cell;
   vertical-align: middle;
@@ -402,7 +402,7 @@ Main Components
 
 .cd-schedule .event-modal .event-info {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   line-height: 1.4;
   height: 100%;
   overflow: hidden;
@@ -432,7 +432,7 @@ Main Components
 }
 
 .cd-schedule .event-modal .header-bg {
-  z-index: 2;
+  z-index: 3;
   -webkit-transform-origin: top center;
   -ms-transform-origin: top center;
   transform-origin: top center;
@@ -443,8 +443,7 @@ Main Components
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 3;
-  background: rgba(0, 0, 0, 0.1);
+  z-index: 4;
   /* replace text with icon */
   color: transparent;
   white-space: nowrap;
@@ -609,7 +608,7 @@ Main Components
 .cd-schedule .cover-layer {
   /* layer between the content and the modal window */
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
   height: 100%;
@@ -640,6 +639,10 @@ Main Components
 @media only screen and (min-width: 800px) {
   .cd-schedule .professor-name,
   .cd-schedule .class-room  {
-    font-size: 1.0rem;
+    font-size: 1vw;
   }
+}
+
+.close {
+  opacity: 1;
 }

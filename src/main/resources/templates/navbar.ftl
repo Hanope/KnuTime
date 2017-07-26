@@ -15,7 +15,7 @@
             <li><a href="/timetable"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp&nbsp모의시간표</a></li>
             <li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp&nbsp강의평가</a></li>
             <li><a href="#"><i class="fa fa-calculator" aria-hidden="true"></i>&nbsp&nbsp학점계산기</a></li>
-            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i>&nbsp&nbsp빈강의실찾기</a></li>
+            <li><a href="/room"><i class="fa fa-home" aria-hidden="true"></i>&nbsp&nbsp빈강의실찾기</a></li>
         </ul>
 
     <#if !currentUser??>
