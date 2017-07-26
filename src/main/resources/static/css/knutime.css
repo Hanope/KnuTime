@@ -1,0 +1,107 @@
+/* 내비게이션 바 스타일 */
+.navbar {
+    margin-bottom: 0px;
+}
+.navbar-default {
+    background-color: #006DCC;
+    border-color: #006DCC;
+    border-radius: 0px;
+}
+.navbar-default .navbar-brand {
+    color: #FFFFFF;
+    padding-top: 25px;
+    font-weight: bold;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #DDDDDD;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #FFFFFF;
+    background-color: #1456B8;
+}
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #FFFFFF;
+}
+.navbar-default .navbar-right > li:hover,
+.navbar-default .navbar-right > li:focus {
+    background-color: #1456B8;
+}
+.navbar-default .navbar-right > .open > a,
+.navbar-default .navbar-right > .open > a:focus,
+.navbar-default .navbar-right > li:focus {
+    color: #FFFFFF;
+    background-color: #1456B8;
+}
+.navbar-fixed-top {
+    min-height: 70px;
+}
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 70px;
+}
+.dropdown .open:hover,
+.dropdown .open:focus {
+    background-color: transparent;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-brand {
+        padding-top: 15px;
+    }
+    .navbar-default .navbar-toggle:focus {
+        background-color: transparent;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #FFFFFF;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #FFFFFF;
+    }
+}
+
+/* 로그아웃 버튼 */
+.navbar-default .btn-logout {
+    width: 100%;
+    padding: 3px 20px;
+    text-align: left;
+    color: #333;
+}
+.btn-logout:hover,
+.btn-logout:focus {
+    text-decoration: none;
+    background-color: #F5F5F5;
+}
+.btn-logout > span {
+    color: #333;
+}
+
+/* carousel 스타일 */
+.carousel-indicators li {
+    border: 0px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.carousel-indicators {
+    bottom: 5px;
+}
+.carousel-inner > .item > img {
+    width: 100%;
+    height: 100%;
+}
+
+/*바로가기 스타일*/
+.link-container {
+    height: 600px;
+    background-color: skyblue;
+}
+
+/* 과목 검색 스타일 */
+.search-class {
+    position: relative;
+    margin: 2em auto;
+}
