@@ -354,6 +354,51 @@ Main Components
   background: #29B6F6;
 }
 
+.cd-schedule .single-event[data-event="event-8"],
+.cd-schedule [data-event="event-8"] .header-bg {
+  background: #FFAEB9;
+}
+
+.cd-schedule .single-event[data-event="event-8"]:hover {
+  background: #FFB6C1;
+}
+
+.cd-schedule .single-event[data-event="event-9"],
+.cd-schedule [data-event="event-9"] .header-bg {
+  background: #EE30A7;
+}
+
+.cd-schedule .single-event[data-event="event-9"]:hover {
+  background: #FF34B3;
+}
+
+.cd-schedule .single-event[data-event="event-10"],
+.cd-schedule [data-event="event-10"] .header-bg {
+  background: #8EE5EE;
+}
+
+.cd-schedule .single-event[data-event="event-10"]:hover {
+  background: #98F5FF;
+}
+
+.cd-schedule .single-event[data-event="event-11"],
+.cd-schedule [data-event="event-11"] .header-bg {
+  background: #BCEE68;
+}
+
+.cd-schedule .single-event[data-event="event-11"]:hover {
+  background: #CAFF70;
+}
+
+.cd-schedule .single-event[data-event="event-12"],
+.cd-schedule [data-event="event-12"] .header-bg {
+  background: #FF7F00;
+}
+
+.cd-schedule .single-event[data-event="event-12"]:hover {
+  background: #FF8C00;
+}
+
 .cd-schedule .event-modal {
   position: fixed;
   z-index: 4;
@@ -639,7 +684,7 @@ Main Components
 @media only screen and (min-width: 800px) {
   .cd-schedule .professor-name,
   .cd-schedule .class-room  {
-    font-size: 1vw;
+    font-size: 0.8vw;
   }
 }
 

@@ -32,7 +32,7 @@
                     <li><a href="#"><span class="fa fa-gears"></span>&nbsp&nbsp설정</a></li>
                     <li>
                         <form action="/logout" method="post">
-                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
                             <button type="submit" class="btn btn-link btn-logout"><span class="fa fa-sign-out"></span>&nbsp&nbsp로그아웃</button>
                         </form>
                     </li>

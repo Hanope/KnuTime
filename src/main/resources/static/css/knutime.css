@@ -101,9 +101,24 @@
 }
 
 /* 과목 검색 스타일 */
-.search-class {
+.search-form {
     position: relative;
     margin: 2em auto;
+}
+.search-result {
+    height: 600px;
+    overflow: scroll;
+}
+.list-group-item:hover,
+.list-group-item:focus {
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+.course-list {
+    margin-bottom: 5px;
+}
+.course-list:last-child {
+    margin-bottom: 0px;
 }
 
 /* 지도 스타일 */

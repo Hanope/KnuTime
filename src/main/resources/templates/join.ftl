@@ -29,64 +29,64 @@
 </head>
 <body>
 
-<#-- 내비게이션 바 include -->
-<#include "./navbar.ftl">
+    <#-- 내비게이션 바 include -->
+    <#include "./navbar.ftl">
 
-<!-- 회원가입 폼 -->
-<div class="container">
-    <div class="col-md-12">
-        <div class="page-header">
-            <h2>회원가입</h2>
+    <!-- 회원가입 폼 -->
+    <div class="container">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h2>회원가입</h2>
+            </div>
+            <form class="form-horizontal" action="/user/create" name="form" method="post">
+                <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email">이메일</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="이메일" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="password">비밀번호</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호 재입력" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="passwordRepeated">비밀번호 재입력</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="passwordRepeated" name="passwordRepeated" placeholder="비밀번호 재입력" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="nickName">별명</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="nickName" name="nickName" placeholder="별명" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-primary">회원가입</button>
+                    </div>
+                </div>
+            </form>
+
+        <@spring.bind "form" />
+        <#if spring.status.error>
+            <ul>
+                <#list spring.status.errorMessages as error>
+                    <li>${error}</li>
+                </#list>
+            </ul>
+        </#if>
+
         </div>
-        <form class="form-horizontal" action="/user/create" name="form" method="post">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="email">이메일</label>
-                <div class="col-sm-6">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="이메일" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="password">비밀번호</label>
-                <div class="col-sm-6">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호 재입력" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="passwordRepeated">비밀번호 재입력</label>
-                <div class="col-sm-6">
-                    <input type="password" class="form-control" id="passwordRepeated" name="passwordRepeated" placeholder="비밀번호 재입력" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="nickName">별명</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="nickName" name="nickName" placeholder="별명" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-12 text-center">
-                    <button type="submit" class="btn btn-primary">회원가입</button>
-                </div>
-            </div>
-        </form>
-
-    <@spring.bind "form" />
-    <#if spring.status.error>
-        <ul>
-            <#list spring.status.errorMessages as error>
-                <li>${error}</li>
-            </#list>
-        </ul>
-    </#if>
-
     </div>
-</div>
 
 
-<!-- jQuery javascript 로드-->
-<script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
-<!-- bootstrap javascript 로드 -->
-<script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- jQuery javascript 로드-->
+    <script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
+    <!-- bootstrap javascript 로드 -->
+    <script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

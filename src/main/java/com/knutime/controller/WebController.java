@@ -1,7 +1,5 @@
 package com.knutime.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,10 +9,20 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Optional;
 
 @Controller
-public class LoginController {
+public class WebController {
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView loginView(@RequestParam Optional<String> error) {
-        return new ModelAndView("login", "error", error);
+    @RequestMapping("/")
+    public String home() {
+        return "index";
+    }
+
+    @RequestMapping("/timetable")
+    public String timetable() {
+        return "timetable";
+    }
+
+    @RequestMapping("/room")
+    public String roomView() {
+        return "map";
     }
 }

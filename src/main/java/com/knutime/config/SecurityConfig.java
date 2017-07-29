@@ -25,19 +25,21 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**").permitAll()
                 .anyRequest().fullyAuthenticated()
                 .and()
-                .formLogin()
+            .formLogin()
                 .loginPage("/login")
                 .failureUrl("/login?error")
                 .usernameParameter("email")
                 .permitAll()
                 .and()
-                .logout()
+            .logout()
                 .logoutUrl("/logout")
                 .deleteCookies("remember-me")
                 .logoutSuccessUrl("/")
                 .permitAll()
                 .and()
-                .rememberMe();
+            .rememberMe()
+                .and()
+            .csrf().disable();
     }
 
     @Override

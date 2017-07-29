@@ -28,47 +28,47 @@
 </head>
 <body>
 
-<#-- 내비게이션 바 include -->
-<#include "./navbar.ftl">
+    <#-- 내비게이션 바 include -->
+    <#include "./navbar.ftl">
 
-<!-- 로그인 폼 -->
-<div class="container">
-    <div class="col-md-12">
-        <div class="page-header">
-            <h2>로그인</h2>
+    <!-- 로그인 폼 -->
+    <div class="container">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h2>로그인</h2>
+            </div>
+            <form class="form-horizontal" action="/login" method="post">
+                <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email">이메일</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" name="email" id="email" type="email" placeholder="이메일">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="password">비밀번호</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" name="password" id="password" type="password" placeholder="비밀번호 재입력">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12 text-center">
+                        <label for="remember-me">자동 로그인</label>
+                        <input type="checkbox" name="remember-me" id="remember-me">
+                        <button class="btn btn-primary" type="submit">로그인</button>
+                    </div>
+                </div>
+            </form>
+
+        <#if error.isPresent()>
+            <p>이메일 혹은 비밀번호가 올바르지 않습니다.</p>
+        </#if>
         </div>
-        <form class="form-horizontal" action="/login" method="post">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="email">이메일</label>
-                <div class="col-sm-6">
-                    <input class="form-control" name="email" id="email" type="email" placeholder="이메일">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="password">비밀번호</label>
-                <div class="col-sm-6">
-                    <input class="form-control" name="password" id="password" type="password" placeholder="비밀번호 재입력">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-12 text-center">
-                    <label for="remember-me">자동 로그인</label>
-                    <input type="checkbox" name="remember-me" id="remember-me">
-                    <button class="btn btn-primary" type="submit">로그인</button>
-                </div>
-            </div>
-        </form>
-
-    <#if error.isPresent()>
-        <p>이메일 혹은 비밀번호가 올바르지 않습니다.</p>
-    </#if>
     </div>
-</div>
 
-<!-- jQuery javascript 로드-->
-<script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
-<!-- bootstrap javascript 로드 -->
-<script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- jQuery javascript 로드-->
+    <script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
+    <!-- bootstrap javascript 로드 -->
+    <script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

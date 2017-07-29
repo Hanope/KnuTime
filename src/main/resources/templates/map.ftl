@@ -26,8 +26,8 @@
 </head>
 <body>
 
-<#-- 내비게이션 바 include -->
-<#include "./navbar.ftl">
+    <#-- 내비게이션 바 include -->
+    <#include "./navbar.ftl">
 
     <div class="container-fluid map-container">
         <div id="map"></div>
@@ -35,23 +35,23 @@
 
 
 
-<!-- jQuery javascript 로드-->
-<script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
-<!-- bootstrap javascript 로드 -->
-<script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<!-- naver map 로드 -->
-<script src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=EgxMtxqNqz647eTycxYX"></script>
-<!-- naver map script -->
-<script>
-    var map = new naver.maps.Map('map', {
-        center: new naver.maps.LatLng(35.886913, 128.608571),
-        zoom: 12
-    });
+    <!-- jQuery javascript 로드-->
+    <script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
+    <!-- bootstrap javascript 로드 -->
+    <script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- naver map 로드 -->
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=EgxMtxqNqz647eTycxYX"></script>
+    <!-- naver map script -->
+    <script>
+        var map = new naver.maps.Map('map', {
+            center: new naver.maps.LatLng(35.886913, 128.608571),
+            zoom: 12
+        });
 
-    var marker = new naver.maps.Marker({
-        position: new naver.maps.LatLng(35.886913, 128.608571),
-        map: map
-    });
-</script>
+        var marker = new naver.maps.Marker({
+            position: new naver.maps.LatLng(35.886913, 128.608571),
+            map: map
+        });
+    </script>
 </body>
 </html>

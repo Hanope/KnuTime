@@ -26,37 +26,37 @@
 </head>
 <body>
 
-<#-- 내비게이션 바 include -->
-<#include "./navbar.ftl">
+    <#-- 내비게이션 바 include -->
+    <#include "./navbar.ftl">
 
-<!-- carousel -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-    </ol>
+    <!-- carousel -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
 
-    <!-- Wrapper for slide -->
-    <div class="carousel-inner">
-        <div class="item active">
-            <img src="/images/1.png">
-        </div>
-        <div class="item">
-            <img src="/images/2.png">
+        <!-- Wrapper for slide -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="/images/1.png">
+            </div>
+            <div class="item">
+                <img src="/images/2.png">
+            </div>
         </div>
     </div>
-</div>
 
-<!-- 페이지 링크 -->
-<div class="container-fluid link-container">
+    <!-- 페이지 링크 -->
+    <div class="container-fluid link-container">
 
 
-</div>
+    </div>
 
-<!-- jQuery javascript 로드-->
-<script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
-<!-- bootstrap javascript 로드 -->
-<script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- jQuery javascript 로드-->
+    <script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
+    <!-- bootstrap javascript 로드 -->
+    <script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
