@@ -1,10 +1,13 @@
 package com.knutime.domain;
 
 
+import lombok.Getter;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 
 import java.util.Collection;
+import java.util.List;
 
 public class CurrentUser extends org.springframework.security.core.userdetails.User{
 
@@ -30,6 +33,8 @@ public class CurrentUser extends org.springframework.security.core.userdetails.U
     public Role getRole() {
         return user.getRole();
     }
+
+    public List<Timetable> getTimetables() { return user.getTimetables(); }
 
     @Override
     public String toString() {

@@ -1,0 +1,209 @@
+<html lang="ko" class=" csstransitions"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Page Description">
+    <meta name="author" content="knuTime">
+    <title>Page Title</title>
+
+    <!-- 스타일 리셋 -->
+    <link href="./css/reset.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 내비게이션 바 스타일 -->
+    <link href="./css/knutime.css" rel="stylesheet">
+    <!-- 일정표 스타일 -->
+    <link href="./css/timetable.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!-- 내비게이션 바 -->
+<nav class="navbar navbar-default fixed-top">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">크누타임</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-calendar"></i>&nbsp;&nbsp;모의시간표<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/timetable/new">새로 만들기</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/timetable/0f047c0b528b757b473877a9b9fcec79">test</a></li>
+                    <li><a href="/timetable/c86ec7548bd36f68a7e2ec9421c7f854">test2</a></li>
+                    <li><a href="/timetable/dbb60b961540076524e43583cf5a6af4">test3</a></li>
+                    <li><a href="/timetable/bfa1d758218b0aad867a3fe5ed44ad52">test4</a></li>
+                    <li><a href="/timetable/3100e44105a5381ed452d9ed61bb9c2e">test5</a></li>
+                    <li><a href="/timetable/81e3682540830d559833ecb2e80eb414">test6</a></li>
+                    <li><a href="/timetable/f76afb9cf0e77e534e20dfe46af1ebfd">test7</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;&nbsp;강의평가</a></li>
+            <li><a href="#"><i class="fa fa-calculator" aria-hidden="true"></i>&nbsp;&nbsp;학점계산기</a></li>
+            <li><a href="/room"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;빈강의실찾기</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i>&nbsp;&nbsp;test<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><span class="fa fa-gears"></span>&nbsp;&nbsp;설정</a></li>
+                    <li>
+                        <form action="/logout" method="post">
+                            <button type="submit" class="btn btn-link btn-logout"><span class="fa fa-sign-out"></span>&nbsp;&nbsp;로그아웃</button>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-9">
+        <!-- 일정표 -->
+        <div class="panel-group">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3>test4</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="cd-schedule js-full">
+                        <div class="timeline">
+                            <ul>
+                                <li><span>09:00</span></li>
+                                <li><span>09:30</span></li>
+                                <li><span>10:00</span></li>
+                                <li><span>10:30</span></li>
+                                <li><span>11:00</span></li>
+                                <li><span>11:30</span></li>
+                                <li><span>12:00</span></li>
+                                <li><span>12:30</span></li>
+                                <li><span>13:00</span></li>
+                                <li><span>13:30</span></li>
+                                <li><span>14:00</span></li>
+                                <li><span>14:30</span></li>
+                                <li><span>15:00</span></li>
+                                <li><span>15:30</span></li>
+                                <li><span>16:00</span></li>
+                                <li><span>16:30</span></li>
+                                <li><span>17:00</span></li>
+                                <li><span>17:30</span></li>
+                                <li><span>18:00</span></li>
+                            </ul>
+                        </div> <!-- .timeline -->
+
+                        <div class="events">
+                            <ul>
+                                <li class="events-group">
+                                    <div class="top-info"><span>월요일</span></div>
+                                    <ul id="event-mon">
+
+                                    </ul>
+                                </li>
+
+                                <li class="events-group">
+                                    <div class="top-info"><span>화요일</span></div>
+                                    <ul id="event-tue">
+
+                                    </ul>
+                                </li>
+
+                                <li class="events-group">
+                                    <div class="top-info"><span>수요일</span></div>
+                                    <ul id="event-wed">
+
+                                    </ul>
+                                </li>
+
+                                <li class="events-group">
+                                    <div class="top-info"><span>목요일</span></div>
+                                    <ul id="event-thu">
+
+                                    </ul>
+                                </li>
+
+                                <li class="events-group">
+                                    <div class="top-info"><span>금요일</span></div>
+                                    <ul id="event-fri">
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="event-modal">
+                            <header class="header">
+                                <div class="content">
+                                    <span class="event-date"></span>
+                                    <h3 class="class-name"></h3>
+                                    <h5 class="professor-name"></h5>
+                                    <h5 class="class-room"></h5>
+                                </div>
+
+                                <div class="header-bg"></div>
+                            </header>
+
+                            <div class="body">
+                                <div class="event-info"></div>
+                                <div class="body-bg"></div>
+                            </div>
+
+                            <a href="#" class="close">Close</a>
+                        </div>
+
+                        <div class="cover-layer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 일정표 종료 -->
+    </div>
+
+    <!-- 검색창 -->
+    <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="search-form">
+            <div class="input-group">
+                <input type="text" class="form-control" id="course-text" placeholder="과목명 입력">
+                <span class="input-group-btn">
+                        <button type="button" class="btn btn-success" id="course-btn">검색</button>
+                    </span>
+            </div>
+        </div>
+
+        <!-- 검색 결과-->
+        <div class="container-fluid search-result">
+            <ul class="course-result list-group"><li class="list-group-item"><p class="list-course-title course-list">문화 기술 개론</p><p class="list-course-code course-list">CLTR263001</p><p class="list-course-instructor course-list">김항준</p><p class="list-course-location course-list">공대9호관418</p><p class="list-course-time course-list">월1A1B2A/수7A7B8A</p></li><li class="list-group-item"><p class="list-course-title course-list">물리학 I</p><p class="list-course-code course-list">CLTR213030</p><p class="list-course-instructor course-list">이성엽</p><p class="list-course-location course-list">공대9호관417</p><p class="list-course-time course-list">화2B3A3B/목1A1B2A</p></li><li class="list-group-item"><p class="list-course-title course-list">실용화법</p><p class="list-course-code course-list">CLTR003004</p><p class="list-course-instructor course-list">정수진</p><p class="list-course-location course-list">공대9호관417</p><p class="list-course-time course-list">월2B3A3B/금1A1B2A</p></li><li class="list-group-item"><p class="list-course-title course-list">소프트웨어와 문제해결
+            </p><p class="list-course-code course-list">COMP209003</p><p class="list-course-instructor course-list">김항준</p><p class="list-course-location course-list">공대12호관207</p><p class="list-course-time course-list">수1A1B2A2B3A3B4A4B</p></li><li class="list-group-item"><p class="list-course-title course-list">알고리즘1</p><p class="list-course-code course-list">COMP319003</p><p class="list-course-instructor course-list">유관우</p><p class="list-course-location course-list">공대9호관418</p><p class="list-course-time course-list">월2A2B3A/목8B9A9B</p></li><li class="list-group-item"><p class="list-course-title course-list">고고학실습</p><p class="list-course-code course-list">ARAN316001</p><p class="list-course-instructor course-list">이성주</p><p class="list-course-location course-list">제4합동강의동403</p><p class="list-course-time course-list">월8B9A9B/수8B9A9B</p></li><li class="list-group-item"><p class="list-course-title course-list">동물생리학</p><p class="list-course-code course-list">ANSC432001</p><p class="list-course-instructor course-list">손종경</p><p class="list-course-location course-list">생물학관318</p><p class="list-course-time course-list">화8B9A9B/목8B9A9B</p></li><li class="list-group-item"><p class="list-course-title course-list">컴퓨터학개론</p><p class="list-course-code course-list">ITEC201009</p><p class="list-course-instructor course-list">이호경</p><p class="list-course-location course-list">IT대학4호관(제2학생회관)101</p><p class="list-course-time course-list">월7A7B8A/수8B9A9B</p></li></ul>
+        </div>
+    </div>
+
+</div>
+
+<!-- jQuery javascript 로드-->
+<script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+<!-- bootstrap javascript 로드 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./js/modernizr.js"></script>
+<script src="./js/timetable.js"></script>
+
+</body></html>

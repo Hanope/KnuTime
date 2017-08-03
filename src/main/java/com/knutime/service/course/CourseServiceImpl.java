@@ -1,12 +1,15 @@
 package com.knutime.service.course;
 
 import com.knutime.domain.Course;
+import com.knutime.domain.CourseInfo;
+import com.knutime.domain.CourseSummary;
 import com.knutime.repository.CourseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -21,8 +24,21 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<Course> getCourseByTitleOrCode(String param) {
+    public List<CourseSummary> getCourseSummaryByTitleOrCode(String param) {
         LOGGER.debug("Getting course={}", param);
-        return courseRepository.findByTitleStartingWithOrCodeStartingWith(param, param);
+        List<Course> courseList = courseRepository.findByTitleStartingWithOrCodeStartingWith(param, param);
+        List<CourseSummary> courseSummaryList = new ArrayList<>();
+
+        for(Course course : courseList) {
+            CourseSummary courseSummary = new CourseSummary(course);
+            courseSummaryList.add(courseSummary);
+        }
+
+        return courseSummaryList;
+    }
+
+    @Override
+    public Course getCourseInfoById(Long id) {
+        return courseRepository.findOne(id);
     }
 }

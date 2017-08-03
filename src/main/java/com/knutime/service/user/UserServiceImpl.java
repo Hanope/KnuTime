@@ -1,5 +1,6 @@
 package com.knutime.service.user;
 
+import com.knutime.domain.CurrentUser;
 import com.knutime.domain.Role;
 import com.knutime.domain.User;
 import com.knutime.domain.UserCreateForm;
@@ -7,6 +8,9 @@ import com.knutime.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -56,5 +60,13 @@ public class UserServiceImpl implements UserService {
         user.setNickName(form.getNickName());
         user.setRole(Role.USER);
         return userRepository.save(user);
+    }
+
+    @Override
+    public void reloadCurrentUser(User user) {
+        CurrentUser currentUser = new CurrentUser(user);
+
+        Authentication newAuth = new UsernamePasswordAuthenticationToken(currentUser, currentUser.getPassword(), currentUser.getAuthorities());
+        SecurityContextHolder.getContext().setAuthentication(newAuth);
     }
 }

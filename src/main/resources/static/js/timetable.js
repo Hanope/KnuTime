@@ -1,4 +1,3 @@
-jQuery(document).ready(function($) {
     var transitionEnd = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend';
     var transitionsSupported = ($('.csstransitions').length > 0);
     //if browser does not support transitions - use a different event to trigger them
@@ -6,8 +5,6 @@ jQuery(document).ready(function($) {
 
     var timelineItems, timelineStart, timelineUnitDuration;
     var eventSlotHeight;
-
-
 
 
     //should add a loding while the events are organized 
@@ -349,6 +346,7 @@ jQuery(document).ready(function($) {
     if (schedules.length > 0) {
         schedules.each(function() {
             //create SchedulePlan objects
+            console.log($(this));
             objSchedulesPlan.push(new SchedulePlan($(this)));
         });
     }
@@ -423,8 +421,12 @@ jQuery(document).ready(function($) {
     });
 
     // 시간표 미리 표시
+    var color;
+    var loadedCourse = [];
+
     $('.course-result').on('mouseenter', 'li', function() {
         var class_info = selected_class_info(this);
+        color = 'data-event="event-' + (Math.floor(Math.random() * 30) + 1) + '"';
         show_class(class_info, 'temp-event');
     });
 
@@ -433,10 +435,64 @@ jQuery(document).ready(function($) {
     });
 
     $('.course-result').on('click', 'li', function() {
-        var class_info = selected_class_info(this);
-        show_class(class_info, '');
+        var selected_course = selected_class_info(this);
 
+        if(!isDuplicatedSchedule(selected_course)) {
+            loadedCourse.push(selected_course);
+            show_class(selected_course, '');
+        }
     });
+
+    // 현재 load된 시간표와 시간이 겹치는 시간표가 있는지 검사
+    function isDuplicatedSchedule(selected_course) {
+        var flag = false;
+
+        $.each(loadedCourse, function(i, course) {
+            var loaded_title = course['course_title'];
+            var loaded_times = course['course_times'];
+            var selected_times = selected_course['course_times'];
+
+            if(selected_course['course_title'] == loaded_title) {
+                flag = true;
+                return false;
+            }
+
+            $.each(loaded_times, function(j, loaded_days) {
+                var loaded_day = loaded_days['day'];
+
+                $.each(selected_times, function(k, selected_days) {
+                    var selected_day = selected_days['day'];
+
+                    if(selected_day == loaded_day) {
+                        var loaded_start_time = loaded_days['times'][0]['start_time'],
+                            loaded_end_time = loaded_days['times'][loaded_days['times'].length-1]['end_time'];
+                        var selected_start_time = selected_days['times'][0]['start_time'],
+                            selected_end_time = selected_days['times'][selected_days['times'].length-1]['end_time'];
+
+                        var l_s_t = createDate(loaded_start_time);
+                        var l_e_t = createDate(loaded_end_time);
+                        var s_s_t = createDate(selected_start_time);
+                        var s_e_t = createDate(selected_end_time);
+
+                        // 시간 겹치는 걸 어떻게 해결할지 고민...
+                        // (('사용자입력시작일' <= DB시작일 and DB시작일 <= '사용자입력종료일') or ('사용자입력시작일' <= DB종료일 and DB종료일 <= '사용자입력종료일') or (DB시작일 <= '사용자입력시작일' and '사용자입력종료일' <= DB종료일))
+                    }
+                });
+            });
+        });
+
+        return flag;
+    }
+
+    function createDate(time) {
+        var d = new Date();
+        var hour = time.split(":")[0];
+        var minute = time.split(":")[1];
+
+        d.setHours(hour, minute, 0);
+
+        return d;
+    }
 
     function selected_class_info(element) {
         var days = [];
@@ -510,7 +566,7 @@ jQuery(document).ready(function($) {
         obj['course_instructor'] = $(element).find('.list-course-instructor').text();
         obj['course_location'] = $(element).find('.list-course-location').text();
 
-        obj['times'] = days;
+        obj['course_times'] = days;
 
         return obj;
     }
@@ -520,7 +576,7 @@ jQuery(document).ready(function($) {
         var course_title = class_info['course_title'];
         var course_instructor = class_info['course_instructor'];
         var course_location = class_info['course_location'];
-        var times = class_info['times'];
+        var times = class_info['course_times'];
 
         $.each(times, function(index, item) {
             var day = item['day'];
@@ -537,9 +593,6 @@ jQuery(document).ready(function($) {
             var css_top = (eventTop - 1) + 'px',
                 css_height = (eventHeight + 1) + 'px';
 
-            var color = 'data-event="event-' + (Math.floor(Math.random() * 12) + 1) + '"';
-
-
             var html = '<li class="single-event ' + temp +'" data-start="' + course_start_time + '" data-end="' + course_end_time + '"' + color + ' style="top: ' + css_top + '; height: ' + css_height + '; opacity: 0.8">' +
                 '<a href="#"><span class="event-date">' + course_start_time + ' - ' + course_end_time + '</span>' +
                 '<em class="class-name">' + course_title + '</em>' +
@@ -550,6 +603,5 @@ jQuery(document).ready(function($) {
 
             $('#event-' + day).append(html);
         });
-    }
 
-});
+    }

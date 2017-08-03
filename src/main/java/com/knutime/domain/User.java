@@ -2,8 +2,10 @@ package com.knutime.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -29,44 +31,23 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public Long getId() {
-        return id;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_user_id")
+    private List<Timetable> timetables;
+
+    public User() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public User(User user) {
+        this.id = user.getId();
+        this.email = user.getEmail();
+        this.passwordHash = user.getPasswordHash();
+        this.nickName = user.getNickName();
+        this.role = user.getRole();
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
-
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
+    public void addTimetable(Timetable timetable) {
+        this.timetables.add(timetable);
     }
 
     @Override
@@ -77,6 +58,7 @@ public class User {
                 ", passwordHash='" + passwordHash.substring(0, 10) +
                 ", nickName=" + nickName +
                 ", role=" + role +
+                ", timetables= " + timetables +
                 '}';
     }
 }

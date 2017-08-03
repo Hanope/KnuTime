@@ -2,27 +2,34 @@ package com.knutime.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Optional;
+import java.security.Principal;
 
 @Controller
 public class WebController {
 
     @RequestMapping("/")
-    public String home() {
+    public String home(Principal principal) {
+        if(principal != null)
+            System.out.println(principal.getName());
         return "index";
-    }
-
-    @RequestMapping("/timetable")
-    public String timetable() {
-        return "timetable";
     }
 
     @RequestMapping("/room")
     public String roomView() {
         return "map";
+    }
+
+    @RequestMapping("/test")
+    public String testView() {
+        return "test";
+    }
+
+    @ResponseBody
+    @RequestMapping("/test/ajax")
+    public void testAjax(Principal principal) {
+        if(principal != null)
+            System.out.println(principal.getName());
     }
 }

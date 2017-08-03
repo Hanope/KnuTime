@@ -1,6 +1,8 @@
 package com.knutime.controller;
 
 import com.knutime.domain.Course;
+import com.knutime.domain.CourseInfo;
+import com.knutime.domain.CourseSummary;
 import com.knutime.service.course.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +22,13 @@ public class CourseController {
 
     @ResponseBody
     @RequestMapping(value = "/course/{param}", method = RequestMethod.GET)
-    public List<Course> getCourse(@PathVariable String param) {
-        return courseService.getCourseByTitleOrCode(param);
+    public List<CourseSummary> getCourse(@PathVariable String param) {
+        return courseService.getCourseSummaryByTitleOrCode(param);
+    }
+
+    @ResponseBody
+    @RequestMapping(value ="/course/info/{id}")
+    public Course getCourseInfo(@PathVariable Long id) {
+        return courseService.getCourseInfoById(id);
     }
 }

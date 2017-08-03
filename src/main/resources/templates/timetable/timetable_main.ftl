@@ -29,7 +29,7 @@
 <body>
 
 <#-- 내비게이션 바 include -->
-    <#include "./navbar.ftl">
+    <#include "../navbar.ftl">
 
     <div class="row">
         <div class="col-lg-9 col-md-9 col-sm-9">
@@ -91,14 +91,14 @@
                         <li class="events-group">
                             <div class="top-info"><span>화요일</span></div>
                             <ul id="event-tue">
-                                <li class="single-event" data-start="10:30" data-end="12:00" data-event="event-4">
+                                <li class="single-event" data-start="10:30" data-end="12:00" data-event="event-23">
                                     <a href="#">
                                         <em class="class-name">물리학1</em>
                                         <span class="professor-name">이성엽</span>
                                         <span class="class-room">공대9호관 417호</span>
                                     </a>
                                 </li>
-                                <li class="single-event" data-start="16:30" data-end="18:00" data-event="event-5">
+                                <li class="single-event" data-start="16:30" data-end="18:00" data-event="event-24">
                                     <a href="#">
                                         <em class="class-name">알고리즘1</em>
                                         <span class="professor-name">유관우</span>
@@ -111,21 +111,21 @@
                         <li class="events-group">
                             <div class="top-info"><span>수요일</span></div>
                             <ul id="event-wed">
-                                <li class="single-event" data-start="09:00" data-end="13:00" data-event="event-6">
+                                <li class="single-event" data-start="09:00" data-end="13:00" data-event="event-21">
                                     <a href="#">
                                         <em class="class-name">소프트웨어와 문제해결</em>
                                         <span class="professor-name">김항준</span>
                                         <span class="class-room">공대12호관 207호</span>
                                     </a>
                                 </li>
-                                <li class="single-event" data-start="15:00" data-end="16:30" data-event="event-1">
+                                <li class="single-event" data-start="15:00" data-end="16:30" data-event="event-20">
                                     <a href="#">
                                         <em class="class-name">문화기술개론</em>
                                         <span class="professor-name">김항준</span>
                                         <span class="class-room">공대9호관 418호</span>
                                     </a>
                                 </li>
-                                <li class="single-event" data-start="16:30" data-end="18:00" data-event="event-3">
+                                <li class="single-event" data-start="16:30" data-end="18:00" data-event="event-25">
                                     <a href="#">
                                         <em class="class-name">컴퓨터학개론</em>
                                         <span class="professor-name">이호경</span>
@@ -138,14 +138,14 @@
                         <li class="events-group">
                             <div class="top-info"><span>목요일</span></div>
                             <ul id="event-thu">
-                                <li class="single-event" data-start="09:00" data-end="10:30" data-event="event-4">
+                                <li class="single-event" data-start="09:00" data-end="10:30" data-event="event-26">
                                     <a href="#">
                                         <em class="class-name">물리학1</em>
                                         <span class="professor-name">이성엽</span>
                                         <span class="class-room">공대9호관 417호</span>
                                     </a>
                                 </li>
-                                <li class="single-event" data-start="16:30" data-end="18:00" data-event="event-5">
+                                <li class="single-event" data-start="16:30" data-end="18:00" data-event="event-27">
                                     <a href="#">
                                         <em class="class-name">알고리즘1</em>
                                         <span class="professor-name">유관우</span>

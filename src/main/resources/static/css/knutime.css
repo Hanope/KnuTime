@@ -46,6 +46,12 @@
     padding-bottom: 0px;
     line-height: 70px;
 }
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+    color: #FFFFFF;
+    background-color: #1456B8;
+}
 .dropdown .open:hover,
 .dropdown .open:focus {
     background-color: transparent;

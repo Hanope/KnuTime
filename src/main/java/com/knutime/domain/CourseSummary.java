@@ -3,62 +3,58 @@ package com.knutime.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
-
-@Entity
 @Getter
 @Setter
-@Table(name = "course")
-public class Course {
+public class CourseSummary {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "course_title", nullable = false)
     private String title;
 
-    @Column(name = "course_code", nullable = false)
     private String code;
 
-    @Column(name = "credits", nullable = false)
     private String credits;
 
-    @Column(name = "department", nullable = false)
     private String department;
 
-    @Column(name = "semester", nullable = false)
     private String semester;
 
-    @Column(name = "course_categories", nullable = false)
     private String categories;
 
-    @Column(name = "instructor", nullable = false)
     private String instructor;
 
-    @Column(name = "hours", nullable = false)
     private String hours;
 
-    @Column(name = "location", nullable = false)
     private String location;
 
-    @Column(name = "phone_email", nullable = false)
     private String phoneEmail;
 
-    @Column(name = "office_hours", nullable = false)
     private String officeHours;
 
-    @Column(name = "language", nullable = false)
     private String language;
 
-    @OneToOne
-    @JoinColumn(name = "fk_course_info_id")
-    private CourseInfo courseInfo;
+    public CourseSummary() {
+    }
+
+    public CourseSummary(Course course) {
+        this.id = course.getId();
+        this.title = course.getTitle();
+        this.code = course.getCode();
+        this.credits = course.getCredits();
+        this.department = course.getDepartment();
+        this.semester = course.getSemester();
+        this.categories = course.getCategories();
+        this.instructor = course.getInstructor();
+        this.hours = course.getHours();
+        this.location = course.getLocation();
+        this.phoneEmail = course.getPhoneEmail();
+        this.officeHours = course.getOfficeHours();
+        this.language = course.getLanguage();
+    }
 
     @Override
     public String toString() {
-        return "Course{" +
+        return "CourseSummary{" +
                 "title=" + title +
                 ", code=" + code +
                 ", credits='" + credits +
@@ -71,7 +67,6 @@ public class Course {
                 ", phoneEmail=" + phoneEmail +
                 ", officeHours=" + officeHours +
                 ", language=" + language +
-                ". courseInfo=" + courseInfo +
                 '}';
     }
 }
