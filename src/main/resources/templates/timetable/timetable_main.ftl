@@ -64,13 +64,6 @@
                         <li class="events-group">
                             <div class="top-info"><span>월요일</span></div>
                             <ul id="event-mon">
-                                <li class="single-event" data-start="09:00" data-end="10:30" data-event="event-1">
-                                    <a href="#">
-                                        <em class="class-name">문화기술개론</em>
-                                        <span class="professor-name">김항준</span>
-                                        <span class="class-room">공대9호관 418호</span>
-                                    </a>
-                                </li>
                                 <li class="single-event" data-start="10:30" data-end="12:00" data-event="event-2">
                                     <a href="#">
                                         <em class="class-name">실용화법</em>
@@ -116,13 +109,6 @@
                                         <em class="class-name">소프트웨어와 문제해결</em>
                                         <span class="professor-name">김항준</span>
                                         <span class="class-room">공대12호관 207호</span>
-                                    </a>
-                                </li>
-                                <li class="single-event" data-start="15:00" data-end="16:30" data-event="event-20">
-                                    <a href="#">
-                                        <em class="class-name">문화기술개론</em>
-                                        <span class="professor-name">김항준</span>
-                                        <span class="class-room">공대9호관 418호</span>
                                     </a>
                                 </li>
                                 <li class="single-event" data-start="16:30" data-end="18:00" data-event="event-25">
@@ -198,7 +184,7 @@
         <div class="col-lg-3 col-md-3 col-sm-3">
             <div class="search-form">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="course-text" placeholder="과목명 입력">
+                    <input type="text" class="form-control" id="course-name" placeholder="과목명 입력">
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-success" id="course-btn">검색</button>
                     </span>

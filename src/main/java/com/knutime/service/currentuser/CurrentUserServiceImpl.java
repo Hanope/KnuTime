@@ -1,7 +1,7 @@
 package com.knutime.service.currentuser;
 
-import com.knutime.domain.CurrentUser;
-import com.knutime.domain.Role;
+import com.knutime.domain.user.CurrentUser;
+import com.knutime.domain.user.Role;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

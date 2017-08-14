@@ -1,6 +1,6 @@
 package com.knutime.repository;
 
-import com.knutime.domain.Course;
+import com.knutime.domain.course.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

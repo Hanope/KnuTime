@@ -1,6 +1,6 @@
 package com.knutime.service.currentuser;
 
-import com.knutime.domain.CurrentUser;
+import com.knutime.domain.user.CurrentUser;
 
 public interface CurrentUserService {
 

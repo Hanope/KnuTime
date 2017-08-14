@@ -1,10 +1,13 @@
-package com.knutime.domain;
+package com.knutime.domain.timetable;
 
-import com.knutime.util.Encode;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.knutime.domain.user.User;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -14,6 +17,7 @@ public class Timetable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
@@ -26,9 +30,13 @@ public class Timetable {
     @Column(name = "semester", nullable = false)
     private String semester;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "fk_user_id")
     private User user;
+
+    @OneToMany(mappedBy = "timetable")
+    private List<CourseTimetable> courseTimetableList = new ArrayList<>();
 
     public Timetable() {
     }

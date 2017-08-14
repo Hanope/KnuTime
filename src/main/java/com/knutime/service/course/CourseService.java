@@ -1,8 +1,7 @@
 package com.knutime.service.course;
 
-import com.knutime.domain.Course;
-import com.knutime.domain.CourseInfo;
-import com.knutime.domain.CourseSummary;
+import com.knutime.domain.course.Course;
+import com.knutime.domain.course.CourseSummary;
 
 import java.util.List;
 

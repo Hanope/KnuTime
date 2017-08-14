@@ -31,131 +31,124 @@
 <#-- 내비게이션 바 include -->
     <#include "../navbar.ftl">
 
-    <div class="row">
-        <div class="col-lg-9 col-md-9 col-sm-9">
-            <!-- 일정표 -->
-            <div class="panel-group">
-                <div class="panel">
-                    <div class="panel-heading">
-                        <h3>${timetable.name}</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="cd-schedule loading">
-                            <div class="timeline">
-                                <ul>
-                                    <li><span>09:00</span></li>
-                                    <li><span>09:30</span></li>
-                                    <li><span>10:00</span></li>
-                                    <li><span>10:30</span></li>
-                                    <li><span>11:00</span></li>
-                                    <li><span>11:30</span></li>
-                                    <li><span>12:00</span></li>
-                                    <li><span>12:30</span></li>
-                                    <li><span>13:00</span></li>
-                                    <li><span>13:30</span></li>
-                                    <li><span>14:00</span></li>
-                                    <li><span>14:30</span></li>
-                                    <li><span>15:00</span></li>
-                                    <li><span>15:30</span></li>
-                                    <li><span>16:00</span></li>
-                                    <li><span>16:30</span></li>
-                                    <li><span>17:00</span></li>
-                                    <li><span>17:30</span></li>
-                                    <li><span>18:00</span></li>
-                                </ul>
-                            </div> <!-- .timeline -->
+<div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-9">
+        <!-- 일정표 -->
+        <div class="cd-schedule loading">
+            <div class="timeline">
+                <ul>
+                    <li><span>09:00</span></li>
+                    <li><span>09:30</span></li>
+                    <li><span>10:00</span></li>
+                    <li><span>10:30</span></li>
+                    <li><span>11:00</span></li>
+                    <li><span>11:30</span></li>
+                    <li><span>12:00</span></li>
+                    <li><span>12:30</span></li>
+                    <li><span>13:00</span></li>
+                    <li><span>13:30</span></li>
+                    <li><span>14:00</span></li>
+                    <li><span>14:30</span></li>
+                    <li><span>15:00</span></li>
+                    <li><span>15:30</span></li>
+                    <li><span>16:00</span></li>
+                    <li><span>16:30</span></li>
+                    <li><span>17:00</span></li>
+                    <li><span>17:30</span></li>
+                    <li><span>18:00</span></li>
+                </ul>
+            </div> <!-- .timeline -->
 
-                            <div class="events">
-                                <ul>
-                                    <li class="events-group">
-                                        <div class="top-info"><span>월요일</span></div>
-                                        <ul id="event-mon">
+            <div class="events">
+                <ul>
+                    <li class="events-group">
+                        <div class="top-info"><span>월요일</span></div>
+                        <ul id="event-mon">
+                        </ul>
+                    </li>
 
-                                        </ul>
-                                    </li>
+                    <li class="events-group">
+                        <div class="top-info"><span>화요일</span></div>
+                        <ul id="event-tue">
+                        </ul>
+                    </li>
 
-                                    <li class="events-group">
-                                        <div class="top-info"><span>화요일</span></div>
-                                        <ul id="event-tue">
+                    <li class="events-group">
+                        <div class="top-info"><span>수요일</span></div>
+                        <ul id="event-wed">
+                        </ul>
+                    </li>
 
-                                        </ul>
-                                    </li>
+                    <li class="events-group">
+                        <div class="top-info"><span>목요일</span></div>
+                        <ul id="event-thu">
+                        </ul>
+                    </li>
 
-                                    <li class="events-group">
-                                        <div class="top-info"><span>수요일</span></div>
-                                        <ul id="event-wed">
-
-                                        </ul>
-                                    </li>
-
-                                    <li class="events-group">
-                                        <div class="top-info"><span>목요일</span></div>
-                                        <ul id="event-thu">
-
-                                        </ul>
-                                    </li>
-
-                                    <li class="events-group">
-                                        <div class="top-info"><span>금요일</span></div>
-                                        <ul id="event-fri">
-
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="event-modal">
-                                <header class="header">
-                                    <div class="content">
-                                        <span class="event-date"></span>
-                                        <h3 class="class-name"></h3>
-                                        <h5 class="professor-name"></h5>
-                                        <h5 class="class-room"></h5>
-                                    </div>
-
-                                    <div class="header-bg"></div>
-                                </header>
-
-                                <div class="body">
-                                    <div class="event-info"></div>
-                                    <div class="body-bg"></div>
-                                </div>
-
-                                <a href="#" class="close">Close</a>
-                            </div>
-
-                            <div class="cover-layer"></div>
-                        </div>
-                    </div>
-                </div>
+                    <li class="events-group">
+                        <div class="top-info"><span>금요일</span></div>
+                        <ul id="event-fri">
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <!-- 일정표 종료 -->
-        </div>
 
-        <!-- 검색창 -->
-        <div class="col-lg-3 col-md-3 col-sm-3">
-            <div class="search-form">
-                <div class="input-group">
-                    <input type="text" class="form-control" id="course-text" placeholder="과목명 입력">
-                    <span class="input-group-btn">
+            <div class="event-modal">
+                <header class="header">
+                    <div class="content">
+                        <span class="event-date"></span>
+                        <h3 class="class-name"></h3>
+                        <h5 class="professor-name"></h5>
+                        <h5 class="class-room"></h5>
+                    </div>
+
+                    <div class="header-bg"></div>
+                </header>
+
+                <div class="body">
+                    <div class="event-info"></div>
+                    <div class="body-bg"></div>
+                </div>
+
+                <a href="#" class="close">Close</a>
+            </div>
+
+            <div class="cover-layer"></div>
+        </div> <!-- 일정표 종료 -->
+    </div>
+
+    <!-- 검색창 -->
+    <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="search-form">
+            <div class="input-group">
+                <input type="text" class="form-control" id="course-name" placeholder="과목명 입력">
+                <span class="input-group-btn">
                         <button type="button" class="btn btn-success" id="course-btn">검색</button>
                     </span>
-                </div>
-            </div>
-
-            <!-- 검색 결과-->
-            <div class="container-fluid search-result">
-                <ul class="course-result list-group"></ul>
             </div>
         </div>
 
+        <!-- 검색 결과-->
+        <div class="container-fluid search-result">
+            <ul class="course-result list-group"></ul>
+        </div>
     </div>
+
+</div>
 
     <!-- jQuery javascript 로드-->
     <script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
     <!-- bootstrap javascript 로드 -->
     <script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="/js/modernizr.js"></script>
+
+    <script>
+
+
+    </script>
+
+
     <script src="/js/timetable.js"></script>
+
 </body>
 </html>

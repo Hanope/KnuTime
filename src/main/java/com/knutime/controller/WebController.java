@@ -21,11 +21,6 @@ public class WebController {
         return "map";
     }
 
-    @RequestMapping("/test")
-    public String testView() {
-        return "test";
-    }
-
     @ResponseBody
     @RequestMapping("/test/ajax")
     public void testAjax(Principal principal) {

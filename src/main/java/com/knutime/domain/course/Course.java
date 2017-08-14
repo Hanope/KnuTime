@@ -1,9 +1,13 @@
-package com.knutime.domain;
+package com.knutime.domain.course;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.knutime.domain.timetable.CourseTimetable;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,10 +20,10 @@ public class Course {
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "course_title", nullable = false)
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "course_code", nullable = false)
+    @Column(name = "code", nullable = false)
     private String code;
 
     @Column(name = "credits", nullable = false)
@@ -31,14 +35,18 @@ public class Course {
     @Column(name = "semester", nullable = false)
     private String semester;
 
-    @Column(name = "course_categories", nullable = false)
+    @Column(name = "categories", nullable = false)
     private String categories;
 
     @Column(name = "instructor", nullable = false)
     private String instructor;
 
+    // 나중에 컬럼 삭제 해야함.
     @Column(name = "hours", nullable = false)
     private String hours;
+
+    @OneToMany(mappedBy = "course")
+    private List<CourseHours> courseHoursList = new ArrayList<>();
 
     @Column(name = "location", nullable = false)
     private String location;
@@ -46,7 +54,7 @@ public class Course {
     @Column(name = "phone_email", nullable = false)
     private String phoneEmail;
 
-    @Column(name = "office_hours", nullable = false)
+    @Column(name = "office_hours")
     private String officeHours;
 
     @Column(name = "language", nullable = false)
@@ -55,6 +63,10 @@ public class Course {
     @OneToOne
     @JoinColumn(name = "fk_course_info_id")
     private CourseInfo courseInfo;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "course")
+    private List<CourseTimetable> courseTimetableList = new ArrayList<>();
 
     @Override
     public String toString() {

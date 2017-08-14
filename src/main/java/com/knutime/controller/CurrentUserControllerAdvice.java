@@ -1,6 +1,6 @@
 package com.knutime.controller;
 
-import com.knutime.domain.CurrentUser;
+import com.knutime.domain.user.CurrentUser;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;

@@ -1,12 +1,9 @@
-package com.knutime.domain;
+package com.knutime.domain.user;
 
 
-import lombok.Getter;
-import lombok.ToString;
-import org.springframework.security.core.GrantedAuthority;
+import com.knutime.domain.timetable.Timetable;
 import org.springframework.security.core.authority.AuthorityUtils;
 
-import java.util.Collection;
 import java.util.List;
 
 public class CurrentUser extends org.springframework.security.core.userdetails.User{

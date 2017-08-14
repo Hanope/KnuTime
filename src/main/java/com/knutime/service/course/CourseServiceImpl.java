@@ -1,8 +1,7 @@
 package com.knutime.service.course;
 
-import com.knutime.domain.Course;
-import com.knutime.domain.CourseInfo;
-import com.knutime.domain.CourseSummary;
+import com.knutime.domain.course.Course;
+import com.knutime.domain.course.CourseSummary;
 import com.knutime.repository.CourseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,12 +15,9 @@ import java.util.List;
 public class CourseServiceImpl implements CourseService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CourseService.class);
-    private final CourseRepository courseRepository;
 
     @Autowired
-    public CourseServiceImpl(CourseRepository courseRepository) {
-        this.courseRepository = courseRepository;
-    }
+    private CourseRepository courseRepository;
 
     @Override
     public List<CourseSummary> getCourseSummaryByTitleOrCode(String param) {

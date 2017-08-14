@@ -1,7 +1,7 @@
 package com.knutime.service.currentuser;
 
-import com.knutime.domain.CurrentUser;
-import com.knutime.domain.User;
+import com.knutime.domain.user.CurrentUser;
+import com.knutime.domain.user.User;
 import com.knutime.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,12 +14,9 @@ import org.springframework.stereotype.Service;
 public class CurrentUserDetailsService implements UserDetailsService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CurrentUserDetailsService.class);
-    private final UserService userService;
 
     @Autowired
-    public CurrentUserDetailsService(UserService userService) {
-        this.userService = userService;
-    }
+    private UserService userService;
 
     @Override
     public CurrentUser loadUserByUsername(String email) throws UsernameNotFoundException {

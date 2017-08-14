@@ -1,13 +1,18 @@
 package com.knutime.service.timetable;
 
-import com.knutime.domain.Timetable;
-import org.springframework.security.core.userdetails.User;
+import com.knutime.domain.timetable.Timetable;
 
-import java.security.Principal;
+import java.util.Map;
 
 public interface TimetableService {
 
     Timetable createTimetable(Long userId, Timetable tableForm);
 
+    boolean isExistsTimetable(String serialNumber);
+
     Timetable getTimetable(String serialNumber);
+
+    Map<String, Object> deleteCourse(String tableId, Long courseId);
+
+    Map<String, Object> addCourse(String tableId, Long courseId);
 }

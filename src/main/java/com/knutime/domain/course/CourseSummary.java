@@ -1,4 +1,4 @@
-package com.knutime.domain;
+package com.knutime.domain.course;
 
 import lombok.Getter;
 import lombok.Setter;

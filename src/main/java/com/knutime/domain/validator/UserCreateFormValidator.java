@@ -1,6 +1,6 @@
 package com.knutime.domain.validator;
 
-import com.knutime.domain.UserCreateForm;
+import com.knutime.domain.user.UserCreateForm;
 import com.knutime.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

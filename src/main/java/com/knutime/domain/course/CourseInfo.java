@@ -1,6 +1,7 @@
-package com.knutime.domain;
+package com.knutime.domain.course;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,25 +15,26 @@ public class CourseInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "goals", nullable = true)
+    @Column(name = "goals", nullable = true, columnDefinition = "TEXT")
     private String goals;
 
-    @Column(name = "textbook", nullable = true)
+    @Column(name = "textbook", nullable = true, columnDefinition = "TEXT")
     private String textbook;
 
-    @Column(name = "description", nullable = true)
+    @Column(name = "description", nullable = true, columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "criteria", nullable = true)
+    @Column(name = "criteria", nullable = true, columnDefinition = "TEXT")
     private String criteria;
 
-    @Column(name = "notice", nullable = true)
+    @Column(name = "notice", nullable = true, columnDefinition = "TEXT")
     private String notice;
 
-    @Column(name = "disabilities", nullable = true)
+    @Column(name = "disabilities", nullable = true, columnDefinition = "TEXT")
     private String disabilities;
 
     @Override

@@ -1,9 +1,9 @@
 package com.knutime.service.user;
 
-import com.knutime.domain.CurrentUser;
-import com.knutime.domain.Role;
-import com.knutime.domain.User;
-import com.knutime.domain.UserCreateForm;
+import com.knutime.domain.user.CurrentUser;
+import com.knutime.domain.user.Role;
+import com.knutime.domain.user.User;
+import com.knutime.domain.user.UserCreateForm;
 import com.knutime.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,12 +21,9 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
-    private final UserRepository userRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    private UserRepository userRepository;
 
     @Override
     public Optional<User> getUserById(long id) {

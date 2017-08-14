@@ -1,6 +1,6 @@
 package com.knutime.repository;
 
-import com.knutime.domain.User;
+import com.knutime.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

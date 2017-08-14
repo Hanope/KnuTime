@@ -1,6 +1,6 @@
 package com.knutime.controller;
 
-import com.knutime.domain.UserCreateForm;
+import com.knutime.domain.user.UserCreateForm;
 import com.knutime.domain.validator.UserCreateFormValidator;
 import com.knutime.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
