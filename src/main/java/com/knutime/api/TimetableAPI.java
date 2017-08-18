@@ -14,7 +14,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/timetable")
+@RequestMapping("/api/timetable")
 public class TimetableAPI {
 
     @Autowired

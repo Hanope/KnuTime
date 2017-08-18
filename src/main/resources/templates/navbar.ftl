@@ -20,7 +20,7 @@
                             <li><a href="/timetable/new">새로 만들기</a></li>
                             <li role="separator" class="divider"></li>
                             <#list currentUser.timetables as item>
-                                <li><a href="/timetable/view/${item.serialNumber}">${item.name}</a></li>
+                                <li><a href="/timetable/${item.serialNumber}">${item.name}</a></li>
                             </#list>
                         </ul>
                     </li>

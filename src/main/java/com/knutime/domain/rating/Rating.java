@@ -4,7 +4,6 @@ import com.knutime.domain.course.Course;
 import com.knutime.domain.user.User;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;

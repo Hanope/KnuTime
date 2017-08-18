@@ -16,6 +16,10 @@ public class Hours {
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
+    @Column(name = "day", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Day day;
+
     @Column(name = "start_time")
     private Time startTime;
 

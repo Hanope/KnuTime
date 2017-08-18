@@ -3,6 +3,7 @@ package com.knutime.domain.timetable;
 import java.io.Serializable;
 
 public class CourseTimetableId implements Serializable {
+
     private Long course;
     private Long timetable;
 

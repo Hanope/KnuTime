@@ -23,7 +23,7 @@ public class TimetableController {
         return "/timetable/timetable_main";
     }
 
-    @RequestMapping(value = "/view/{serialNumber}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{serialNumber}", method = RequestMethod.GET)
     public String timetableView(@PathVariable String serialNumber) {
         if(!timetableService.isExistsTimetable(serialNumber))
             throw new ResourceNotFoundException();
@@ -45,7 +45,7 @@ public class TimetableController {
 
         Timetable table  = timetableService.createTimetable(user.getId(), timetable);
 
-        return "redirect:/timetable/view/" + table.getSerialNumber();
+        return "redirect:/timetable/" + table.getSerialNumber();
     }
 
     private CurrentUser getCurrentUser() {

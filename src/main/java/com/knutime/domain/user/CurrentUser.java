@@ -1,9 +1,7 @@
 package com.knutime.domain.user;
 
-
 import com.knutime.domain.timetable.Timetable;
 import org.springframework.security.core.authority.AuthorityUtils;
-
 import java.util.List;
 
 public class CurrentUser extends org.springframework.security.core.userdetails.User{

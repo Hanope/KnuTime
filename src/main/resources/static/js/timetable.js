@@ -6,7 +6,7 @@ var objSchedulesPlan = [],
 
 $.ajax({
     type: 'GET',
-    url: '/timetable/' + serialNumber,
+    url: '/api/timetable/' + serialNumber,
     dataType: 'json',
     success: function(result) {
         var courses = result['result']['courseTimetableList'];
@@ -15,19 +15,19 @@ $.ajax({
         courses.forEach(function(c) {
             var course = c['course'];
             var courseHourList = course['courseHoursList'];
-            var day = courseHourList[0]['day'];
+            var day = courseHourList[0]['hours']['day'];
             var startTime = courseHourList[0]['hours']['startTime'];
             var endTime = '';
 
             courseHourList.forEach(function(courseHour) {
-                if (day != courseHour['day']) {
+                if (day != courseHour['hours']['day']) {
                     appendCourse(course, day, startTime, endTime, count);
                     startTime = courseHour['hours']['startTime'];
                 } else {
                     endTime = courseHour['hours']['endTime'];
                 }
 
-                day = courseHour['day'];
+                day = courseHour['hours']['day'];
             });
 
             appendCourse(course, day, startTime, endTime, count++);
@@ -476,7 +476,7 @@ $('#course-btn').click(function() {
     $.ajax({
         type: 'GET',
         contentType: 'application/json',
-        url: '/course/' + course,
+        url: '/api/course/' + course,
         dataType: 'json',
         success: function(data) {
             var ul = $('.course-result');
@@ -522,7 +522,7 @@ $('.course-result').on('mouseleave', 'li', function() {
 $('.course-result').on('click', 'li', function() {
     var selected_course = selected_class_info(this);
     var course_id = $(this).children('input').val();
-    var url = $(location).attr('origin') + '/timetable/' + serialNumber + '/' + course_id;
+    var url = $(location).attr('origin') + '/api/timetable/' + serialNumber + '/' + course_id;
 
     $.ajax({
         type: 'POST',
@@ -721,7 +721,7 @@ function show_class(class_info, temp) {
 $(document).on('click', '.event-close', function() {
     var single_event = $(this).parent();
     var course_id = single_event.children('.course-id').val();
-    var url = $(location).attr('origin') + '/timetable/' + serialNumber + '/' + course_id;
+    var url = $(location).attr('origin') + '/api/timetable/' + serialNumber + '/' + course_id;
 
     $.ajax({
         type: 'DELETE',

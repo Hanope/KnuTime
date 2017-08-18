@@ -17,10 +17,6 @@ public class CourseHours {
     @Column(name = "id", nullable = false, updatable = false)
     private Integer id;
 
-    @Column(name = "day", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private Day day;
-
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "fk_course_id")

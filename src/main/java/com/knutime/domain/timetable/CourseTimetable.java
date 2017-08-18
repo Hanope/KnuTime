@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.knutime.domain.course.Course;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +12,7 @@ import javax.persistence.*;
 @IdClass(CourseTimetableId.class)
 @Table(name = "course_timetable")
 public class CourseTimetable {
+
     @Id
     @ManyToOne
     @JoinColumn(name = "fk_course_id")

@@ -8,29 +8,17 @@ import lombok.Setter;
 public class CourseSummary {
 
     private Long id;
-
     private String title;
-
     private String code;
-
     private String credits;
-
     private String department;
-
     private String semester;
-
     private String categories;
-
     private String instructor;
-
     private String hours;
-
     private String location;
-
     private String phoneEmail;
-
     private String officeHours;
-
     private String language;
 
     public CourseSummary() {

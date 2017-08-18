@@ -3,7 +3,6 @@ package com.knutime.domain.user;
 import com.knutime.domain.timetable.Timetable;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.util.List;
 

@@ -1,13 +1,9 @@
 package com.knutime.service.timetable;
 
 import com.knutime.domain.course.Course;
-import com.knutime.domain.course.CourseHours;
 import com.knutime.domain.timetable.*;
 import com.knutime.domain.user.User;
-import com.knutime.repository.CourseRepository;
-import com.knutime.repository.CourseTimetableRepository;
-import com.knutime.repository.TimetableRepository;
-import com.knutime.repository.UserRepository;
+import com.knutime.repository.*;
 import com.knutime.service.course.CourseService;
 import com.knutime.service.user.UserService;
 import com.knutime.util.Encode;
@@ -15,8 +11,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class TimetableServiceImpl implements TimetableService {
@@ -60,7 +54,6 @@ public class TimetableServiceImpl implements TimetableService {
     @Override
     public Timetable getTimetable(String serialNumber) {
         LOGGER.debug("Get TimeTable {}", serialNumber);
-
         return timetableRepository.findOneBySerialNumber(serialNumber);
     }
 
@@ -80,10 +73,10 @@ public class TimetableServiceImpl implements TimetableService {
         if(!timetable.getUser().getId().equals(userId))
             return UNAUTHORIZED;
 
-        if(isDuplicateCourse(course, timetable))
+        if(isDuplicateCourse(timetable, course))
             return EXISTS_COURSE;
 
-        if(isDuplicateTime())
+        if(isDuplicateTime(timetable, course))
             return EXISTS_TIME;
 
         CourseTimetable courseTimetable = new CourseTimetable(course, timetable);
@@ -109,38 +102,11 @@ public class TimetableServiceImpl implements TimetableService {
         return SUCCESS;
     }
 
-//    private int isDuplicateCourse(Timetable timetable, Course course) {
-//        Long courseId = course.getId();
-//
-//        for(CourseTimetable courseTimetable : timetable.getCourseTimetableList()) {
-//            if(courseTimetable.getCourse().getId().equals(courseId))
-//                return EXISTS_COURSE;
-//
-//            if(isDuplicateTime(courseTimetable.getCourse().getCourseHoursList(), course.getCourseHoursList()))
-//                return EXISTS_TIME;
-//        }
-//
-//        return SUCCESS;
-//    }
-
-    private boolean isDuplicateCourse(Course course, Timetable timetable) {
-        return courseTimetableRepository.existsByCourseAndTimetable(course, timetable);
+    private boolean isDuplicateCourse(Timetable timetable, Course course) {
+        return courseTimetableRepository.existsCourse(timetable, course);
     }
 
-    // 리스트를 가져와서 하나씩 비교하지 말고 DB에서 비교해서 있는지 확인하는게 빠를듯?
-    private boolean isDuplicateTime(List<CourseHours> hours1, List<CourseHours> hours2) {
-        for(CourseHours h1 : hours1) {
-            for(CourseHours h2 : hours2) {
-                if(h1.getDay().equals(h2.getDay())) {
-                    if(h1.getHours().getId().equals(h2.getHours().getId()))
-                        return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    private boolean isDuplicateTime() {
-        return false;
+    private boolean isDuplicateTime(Timetable timetable, Course course) {
+        return courseTimetableRepository.existsCourseTime(timetable, course);
     }
 }
