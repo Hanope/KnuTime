@@ -10,6 +10,7 @@ $.ajax({
     dataType: 'json',
     success: function(result) {
         var courses = result['result']['courseTimetableList'];
+        var count = 1;
 
         courses.forEach(function(c) {
             var course = c['course'];
@@ -17,11 +18,10 @@ $.ajax({
             var day = courseHourList[0]['day'];
             var startTime = courseHourList[0]['hours']['startTime'];
             var endTime = '';
-            var color = 'data-event="event-' + (Math.floor(Math.random() * 30) + 1) + '"';
 
             courseHourList.forEach(function(courseHour) {
                 if (day != courseHour['day']) {
-                    appendCourse(course, day, startTime, endTime, color);
+                    appendCourse(course, day, startTime, endTime, count);
                     startTime = courseHour['hours']['startTime'];
                 } else {
                     endTime = courseHour['hours']['endTime'];
@@ -30,18 +30,18 @@ $.ajax({
                 day = courseHour['day'];
             });
 
-            appendCourse(course, day, startTime, endTime, color);
+            appendCourse(course, day, startTime, endTime, count++);
         });
 
         loadSchedule();
     }
 });
 
-function appendCourse(course, day, startTime, endTime, color) {
+function appendCourse(course, day, startTime, endTime, count) {
     startTime = startTime.substr(0, 5);
     endTime = endTime.substr(0, 5);
 
-    var html = '<li class="single-event" data-start="' + startTime + '" data-end="' + endTime + '" ' + color + '>' +
+    var html = '<li class="single-event event-' + count + '" data-start="' + startTime + '" data-end="' + endTime + '" data-event="event-' + count+ '">' +
         '<input type="hidden" class="course-id" value="' + course["id"] + '"/>' +
         '<span class="event-close">x</span>' +
         '<a href="#">' +
@@ -423,7 +423,6 @@ function loadSchedule() {
     if (schedules.length > 0) {
         schedules.each(function() {
             //create SchedulePlan objects
-            console.log($(this));
             objSchedulesPlan.push(new SchedulePlan($(this)));
         });
     }
@@ -489,6 +488,7 @@ $('#course-btn').click(function() {
                     '<p class="list-course-instructor course-list">' + course.instructor + '</p>' +
                     '<p class="list-course-location course-list">' + course.location + '</p>' +
                     '<p class="list-course-time course-list">' + course.hours + '</p>' +
+                    '<input type="hidden" value="' + course.id + '"/>' +
                     '</li>');
             });
         },
@@ -518,25 +518,30 @@ $('.course-result').on('mouseleave', 'li', function() {
     $('.temp-event').remove();
 });
 
+
 $('.course-result').on('click', 'li', function() {
     var selected_course = selected_class_info(this);
+    var course_id = $(this).children('input').val();
+    var url = $(location).attr('origin') + '/timetable/' + serialNumber + '/' + course_id;
 
-    show_class(selected_course, '');
+    $.ajax({
+        type: 'POST',
+        url: url,
+        dataType: 'json',
+        success: function(result) {
+            console.log(result['message']);
 
-    schedules = $('.cd-schedule');
-    objSchedulesPlan = [];
-    objSchedulesPlan.push(new SchedulePlan(schedules));
+            show_class(selected_course, '');
+            var schedules = $('.cd-schedule');
+            objSchedulesPlan = [];
+            objSchedulesPlan.push(new SchedulePlan(schedules));
+        },
+        error: function(request, status, error) {
+            var json = JSON.parse(request.responseText);
+            alert(json['errorMessage']);
+        }
+    });
 });
-
-function createDate(time) {
-    var d = new Date();
-    var hour = time.split(":")[0];
-    var minute = time.split(":")[1];
-
-    d.setHours(hour, minute, 0);
-
-    return d;
-}
 
 function selected_class_info(element) {
     var days = [];
@@ -714,7 +719,8 @@ function show_class(class_info, temp) {
 }
 
 $(document).on('click', '.event-close', function() {
-    var course_id = $(this).parent().children('.course-id').val();
+    var single_event = $(this).parent();
+    var course_id = single_event.children('.course-id').val();
     var url = $(location).attr('origin') + '/timetable/' + serialNumber + '/' + course_id;
 
     $.ajax({
@@ -722,12 +728,15 @@ $(document).on('click', '.event-close', function() {
         url: url,
         dataType: 'json',
         success: function(result) {
-            console.log(result);
+            var single_event_class = '.' + single_event.attr('class').split(' ')[1];
+            alert(result['message']);
+            $(single_event_class).fadeOut(500, function() {
+                $(this).remove();
+            });
         },
         error: function(request,status,error) {
-            // console.log(request);
-            console.log(status);
-            console.log(error);
+            var json = JSON.parse(request.responseText);
+            alert(json['errorMessage']);
         }
     });
 });

@@ -2,9 +2,14 @@ package com.knutime.service.timetable;
 
 import com.knutime.domain.timetable.Timetable;
 
-import java.util.Map;
-
 public interface TimetableService {
+
+    int BAD_ACCESS = 400;
+    int UNAUTHORIZED = 401;
+    int NOT_FOUND = 404;
+    int EXISTS_COURSE = 100;
+    int EXISTS_TIME = 101;
+    int SUCCESS = 200;
 
     Timetable createTimetable(Long userId, Timetable tableForm);
 
@@ -12,7 +17,7 @@ public interface TimetableService {
 
     Timetable getTimetable(String serialNumber);
 
-    Map<String, Object> deleteCourse(String tableId, Long courseId);
+    int addCourse(String serialNumber, Long courseId, Long userId);
 
-    Map<String, Object> addCourse(String tableId, Long courseId);
+    int deleteCourse(String serialNumber, Long courseId, Long userId);
 }

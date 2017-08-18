@@ -4,15 +4,18 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter
-public class AjaxResponse {
+@Setter
+public class AjaxResponseObject {
 
+    private String status;
     private String message;
+    private Object result;
 
     public void success() {
-        this.message = "success";
+        this.status = "success";
     }
 
     public void fail() {
-        this.message = "fail";
+        this.status = "fail";
     }
 }

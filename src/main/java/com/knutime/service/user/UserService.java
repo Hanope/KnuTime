@@ -2,6 +2,7 @@ package com.knutime.service.user;
 
 import com.knutime.domain.user.User;
 import com.knutime.domain.user.UserCreateForm;
+
 import java.util.Collection;
 import java.util.Optional;
 

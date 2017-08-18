@@ -2,17 +2,14 @@ package com.knutime.controller;
 
 import com.knutime.Exception.ResourceNotFoundException;
 import com.knutime.Exception.UnauthorizedException;
-import com.knutime.domain.user.CurrentUser;
 import com.knutime.domain.timetable.Timetable;
+import com.knutime.domain.user.CurrentUser;
 import com.knutime.service.timetable.TimetableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.Map;
 
 @Controller
 @RequestMapping("/timetable")
@@ -49,24 +46,6 @@ public class TimetableController {
         Timetable table  = timetableService.createTimetable(user.getId(), timetable);
 
         return "redirect:/timetable/view/" + table.getSerialNumber();
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/{serialNumber}/{courseId}", method = RequestMethod.POST)
-    public Map<String, Object> addCourse(@PathVariable String serialNumber, @PathVariable Long courseId) {
-        if(getCurrentUser() == null)
-            throw new UnauthorizedException();
-
-        return timetableService.addCourse(serialNumber, courseId);
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/{serialNumber}/{courseId}", method = RequestMethod.DELETE)
-    public Map<String, Object> deleteCourse(@PathVariable String serialNumber, @PathVariable Long courseId) {
-        if(getCurrentUser() == null)
-            throw new UnauthorizedException();
-
-        return timetableService.deleteCourse(serialNumber, courseId);
     }
 
     private CurrentUser getCurrentUser() {

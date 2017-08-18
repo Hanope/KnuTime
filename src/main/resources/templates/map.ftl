@@ -29,7 +29,7 @@
     <#-- 내비게이션 바 include -->
     <#include "./navbar.ftl">
 
-    <div class="container-fluid map-container">
+    <div class="container-fluid">
         <div id="map"></div>
     </div>
 

@@ -292,47 +292,47 @@ Main Components
 
 .cd-schedule .single-event[data-event="event-1"],
 .cd-schedule [data-event="event-1"] .header-bg {
-  background: #8BC34A;
+  background: #F48FB1;
 }
 
 .cd-schedule .single-event[data-event="event-1"]:hover {
-  background: #9CCC65;
+  background: #F8BBD0;
 }
 
 .cd-schedule .single-event[data-event="event-2"],
 .cd-schedule [data-event="event-2"] .header-bg {
-  background: #CDDC39;
+  background: #CE93D8;
 }
 
 .cd-schedule .single-event[data-event="event-2"]:hover {
-  background: #D4E157;
+  background: #E1BEE7;
 }
 
 .cd-schedule .single-event[data-event="event-3"],
 .cd-schedule [data-event="event-3"] .header-bg {
-  background: #F9A825;
+  background: #81D4FA;
 }
 
 .cd-schedule .single-event[data-event="event-3"]:hover {
-  background: #FBC02D;
+  background: #B3E5FC;
 }
 
 .cd-schedule .single-event[data-event="event-4"],
 .cd-schedule [data-event="event-4"] .header-bg {
-  background: #FF7043;
+  background: #FFCC80;
 }
 
 .cd-schedule .single-event[data-event="event-4"]:hover {
-  background: #FF8A65;
+  background: #FFE0B2;
 }
 
 .cd-schedule .single-event[data-event="event-5"],
 .cd-schedule [data-event="event-5"] .header-bg {
-  background: #00BCD4;
+  background: #69F0AE;
 }
 
 .cd-schedule .single-event[data-event="event-5"]:hover {
-  background: #26C6DA;
+  background: #B9F6CA;
 }
 
 .cd-schedule .single-event[data-event="event-6"],
@@ -346,11 +346,11 @@ Main Components
 
 .cd-schedule .single-event[data-event="event-7"],
 .cd-schedule [data-event="event-7"] .header-bg {
-  background: #03A9F4;
+  background: #448AFF;
 }
 
 .cd-schedule .single-event[data-event="event-7"]:hover {
-  background: #29B6F6;
+  background: #82B1FF;
 }
 
 .cd-schedule .single-event[data-event="event-8"],
@@ -364,11 +364,11 @@ Main Components
 
 .cd-schedule .single-event[data-event="event-9"],
 .cd-schedule [data-event="event-9"] .header-bg {
-  background: #EE30A7;
+  background: #BCAAA4;
 }
 
 .cd-schedule .single-event[data-event="event-9"]:hover {
-  background: #FF34B3;
+  background: #D7CCC8;
 }
 
 .cd-schedule .single-event[data-event="event-10"],
