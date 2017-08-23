@@ -19,9 +19,9 @@ public class CourseServiceImpl implements CourseService {
     private CourseRepository courseRepository;
 
     @Override
-    public List<CourseSummary> getCourseSummaryByTitleOrCode(String param) {
+    public List<CourseSummary> getCourseSummary(String semester, String param) {
         LOGGER.debug("Getting course={}", param);
-        List<Course> courseList = courseRepository.findByTitleStartingWithOrCodeStartingWith(param, param);
+        List<Course> courseList = courseRepository.findByTitleStartingWithAndSemesterOrCodeStartingWithAndSemester(param, semester, param, semester);
         List<CourseSummary> courseSummaryList = new ArrayList<>();
 
         for(Course course : courseList) {

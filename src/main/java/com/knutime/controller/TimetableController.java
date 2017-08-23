@@ -1,7 +1,7 @@
 package com.knutime.controller;
 
-import com.knutime.Exception.ResourceNotFoundException;
-import com.knutime.Exception.UnauthorizedException;
+import com.knutime.exception.ResourceNotFoundException;
+import com.knutime.exception.UnauthorizedException;
 import com.knutime.domain.timetable.Timetable;
 import com.knutime.domain.user.CurrentUser;
 import com.knutime.service.timetable.TimetableService;

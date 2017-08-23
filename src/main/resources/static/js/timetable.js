@@ -205,9 +205,41 @@ SchedulePlan.prototype.openModal = function(event) {
     this.modal.attr('data-event', event.parent().attr('data-event'));
 
     //update event content
-    this.modalBody.find('.event-info').load(event.parent().attr('data-content') + '.html .event-info > *', function(data) {
-        //once the event content has been loaded
-        self.element.addClass('content-loaded');
+    // this.modalBody.find('.event-info').load(event.parent().attr('data-content') + '.html .event-info > *', function(data) {
+    //     //once the event content has been loaded
+    //     self.element.addClass('content-loaded');
+    // });
+
+    //course-info load
+
+    var event_info = this.modalBody.find('.event-info');
+    var course_id = event.parent().children('.course-id').val();
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/course/info/' + course_id,
+        dataType: 'json',
+        success: function(json) {
+            var result = json['result'];
+            var code = result['code'];
+            var credit = result['credits'];
+            var department = result['department'];
+            var language = result['language'];
+            var course_info_obj = result['courseInfo'];
+            var goals = course_info_obj['goals'];
+            var textbook = course_info_obj['textbook'];
+            var description = course_info_obj['description'];
+            var criteria = course_info_obj['criteria'];
+            var notice = course_info_obj['notice'];
+            var disabilities = course_info_obj['disabilities'];
+
+            var html = code + credit + department + language + goals + textbook + description + criteria + notice + disabilities;
+            console.log(html);
+            event_info.append(html);
+        },
+        error: function(request, status, error) {
+
+        }
     });
 
     this.element.addClass('modal-is-open');
@@ -477,6 +509,7 @@ $('#course-btn').click(function() {
         type: 'GET',
         contentType: 'application/json',
         url: '/api/course/' + course,
+        data: { serialNumber: serialNumber},
         dataType: 'json',
         success: function(data) {
             var ul = $('.course-result');

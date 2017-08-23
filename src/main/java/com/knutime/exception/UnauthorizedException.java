@@ -1,4 +1,4 @@
-package com.knutime.Exception;
+package com.knutime.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

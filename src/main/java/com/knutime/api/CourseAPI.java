@@ -3,7 +3,9 @@ package com.knutime.api;
 import com.knutime.domain.ajax.AjaxResponseObject;
 import com.knutime.domain.course.Course;
 import com.knutime.domain.course.CourseSummary;
+import com.knutime.domain.timetable.Timetable;
 import com.knutime.service.course.CourseService;
+import com.knutime.service.timetable.TimetableService;
 import com.knutime.util.CustomErrorType;
 import com.knutime.util.ErrorMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +21,27 @@ public class CourseAPI {
     @Autowired
     private CourseService courseService;
 
+    @Autowired
+    private TimetableService timetableService;
+
     @GetMapping("/{param}")
-    public ResponseEntity<?> getCourseSummary(@PathVariable String param) {
-        AjaxResponseObject result = new AjaxResponseObject();
-        List<CourseSummary> courses = courseService.getCourseSummaryByTitleOrCode(param);
+    public ResponseEntity<?> getCourseSummary(@RequestParam("serialNumber") String serialNumber, @PathVariable String param) {
+        Timetable timetable = timetableService.getTimetable(serialNumber);
+        String semester = timetable.getSemester();
+        List<CourseSummary> courses = courseService.getCourseSummary(semester, param);
 
         if(courses.isEmpty()) {
             return new ResponseEntity(new CustomErrorType(ErrorMessage.ERR_NOT_FOUND_COURSE),
                     HttpStatus.NOT_FOUND);
         } else {
+            AjaxResponseObject result = new AjaxResponseObject();
+
             result.success();
             result.setMessage("course load success");
             result.setResult(courses);
-        }
 
-        return ResponseEntity.ok(result);
+            return ResponseEntity.ok(result);
+        }
     }
 
     @GetMapping("/info/{id}")

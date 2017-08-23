@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CourseService {
 
-    List<CourseSummary> getCourseSummaryByTitleOrCode(String param);
+    List<CourseSummary> getCourseSummary(String param, String semester);
 
     Course getCourseInfoById(Long id);
 }

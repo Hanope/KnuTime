@@ -20,9 +20,6 @@ public class WebController {
         return "map";
     }
 
-    @RequestMapping("/rating")
-    public String ratingView() { return "rating"; }
-
     @ResponseBody
     @RequestMapping("/test/ajax")
     public void testAjax(Principal principal) {
