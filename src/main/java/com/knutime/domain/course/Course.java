@@ -1,6 +1,8 @@
 package com.knutime.domain.course;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.knutime.domain.rating.Rating;
 import com.knutime.domain.timetable.CourseTimetable;
 import lombok.Getter;
 import lombok.Setter;
@@ -66,6 +68,11 @@ public class Course {
     @JsonIgnore
     @OneToMany(mappedBy = "course")
     private List<CourseTimetable> courseTimetableList = new ArrayList<>();
+
+    @OneToMany
+    @JsonManagedReference
+    @JoinColumn(name = "fk_course_id")
+    private List<Rating> RatingList = new ArrayList<>();
 
     @Override
     public String toString() {

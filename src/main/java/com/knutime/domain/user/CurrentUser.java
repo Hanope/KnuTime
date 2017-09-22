@@ -2,6 +2,8 @@ package com.knutime.domain.user;
 
 import com.knutime.domain.timetable.Timetable;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
+
 import java.util.List;
 
 public class CurrentUser extends org.springframework.security.core.userdetails.User{
@@ -36,5 +38,13 @@ public class CurrentUser extends org.springframework.security.core.userdetails.U
         return "CurrentUser{" +
                 "user=" + user +
                 "} " + super.toString();
+    }
+
+    public static CurrentUser getCurrentUser() {
+        try {
+            return (CurrentUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        } catch (ClassCastException e) {
+            return null;
+        }
     }
 }

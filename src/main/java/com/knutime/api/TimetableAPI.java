@@ -5,8 +5,8 @@ import com.knutime.domain.ajax.AjaxResponseObject;
 import com.knutime.domain.timetable.Timetable;
 import com.knutime.domain.user.CurrentUser;
 import com.knutime.service.timetable.TimetableService;
-import com.knutime.util.CustomErrorType;
-import com.knutime.util.ErrorMessage;
+import com.knutime.support.CustomErrorType;
+import com.knutime.support.ErrorMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +25,7 @@ public class TimetableAPI {
         AjaxResponseObject result = new AjaxResponseObject();
         Timetable timetable = timetableService.getTimetable(serialNumber);
 
-        if(timetable == null) {
+        if (timetable == null) {
             return new ResponseEntity(new CustomErrorType(ErrorMessage.ERR_NOT_FOUND_TABLE),
                     HttpStatus.NOT_FOUND);
         } else {
@@ -40,9 +40,9 @@ public class TimetableAPI {
     @PostMapping("/{serialNumber}/{courseId}")
     public ResponseEntity<?> addCourse(@PathVariable String serialNumber, @PathVariable Long courseId) {
         AjaxResponseMessage result = new AjaxResponseMessage();
-        CurrentUser user = getCurrentUser();
+        CurrentUser user = CurrentUser.getCurrentUser();
 
-        if(user == null) {
+        if (user == null) {
             return new ResponseEntity(new CustomErrorType(ErrorMessage.ERR_UNAUTHORIZED_USER),
                     HttpStatus.UNAUTHORIZED);
         } else {
@@ -73,9 +73,9 @@ public class TimetableAPI {
     @DeleteMapping("/{serialNumber}/{courseId}")
     public ResponseEntity<?> deleteCourse(@PathVariable String serialNumber, @PathVariable Long courseId) {
         AjaxResponseMessage result = new AjaxResponseMessage();
-        CurrentUser user = getCurrentUser();
+        CurrentUser user = CurrentUser.getCurrentUser();
 
-        if(user == null)
+        if (user == null)
             return new ResponseEntity(new CustomErrorType(ErrorMessage.ERR_UNAUTHORIZED_USER),
                     HttpStatus.UNAUTHORIZED);
 
@@ -94,13 +94,5 @@ public class TimetableAPI {
         }
 
         return ResponseEntity.ok(result);
-    }
-
-    private CurrentUser getCurrentUser() {
-        try {
-            return (CurrentUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        } catch (ClassCastException e) {
-            return null;
-        }
     }
 }

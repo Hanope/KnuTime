@@ -9,4 +9,6 @@ public interface CourseService {
     List<CourseSummary> getCourseSummary(String param, String semester);
 
     Course getCourseInfoById(Long id);
+
+    List<Course> getCourseList(String name);
 }

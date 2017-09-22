@@ -23,24 +23,11 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <style>
-        .rating-comment {
-            display: inline-block;
-            width:100%;
-            overflow:hidden;
-            text-overflow:ellipsis;
-            white-space:nowrap;
-        }
-        .fa-star:before {
-            color: #F2B01E;
-        }
-    </style>
 </head>
 <body>
 
 <#-- 내비게이션 바 include -->
-    <#include "./navbar.ftl">
+    <#include "../navbar.ftl">
 
 <div class="container-fluid">
     <div class="row">
@@ -92,12 +79,15 @@
                     <h3>강의평가 검색</h3>
                 </div>
                 <div class="rating-search-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="검색어 입력">
-                        <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">검색</button>
+                    <form action="/rating/course">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="rating-search" name="course" list="course-datalist" placeholder="검색어 입력">
+                            <datalist id="course-datalist"></datalist>
+                            <span class="input-group-btn">
+                            <button class="btn btn-default rating-search-btn" type="submit">검색</button>
                         </span>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -108,6 +98,46 @@
 <script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
 <!-- bootstrap javascript 로드 -->
 <script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+    $('.rating-search-btn').click(function() {
+        var param = $('#rating-search').val();
+
+        $.ajax({
+            type: 'GET',
+            contentType: 'application/json',
+            url: '/api/rating/' + param,
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+            }
+        });
+    });
+
+    $('#rating-search').on('input', function() {
+        var course = $('#rating-search').val();
+
+        $.ajax({
+            type: 'GET',
+            contentType: 'application/json',
+            url: '/api/course/search/' + course,
+            dataType: 'json',
+            success: function(data) {
+                var result = data['result'];
+
+                $('#course-datalist').empty();
+
+                if(typeof(result) == 'string') {
+                    $('#course-datalist').append("<option value='" + result +"'>");
+                }
+                else {
+                    for(var i=0; i<result.length; i++)
+                        $('#course-datalist').append("<option value='" + result[i]['title'] + "'>");
+                }
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

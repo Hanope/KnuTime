@@ -6,7 +6,7 @@ import com.knutime.domain.user.User;
 import com.knutime.repository.*;
 import com.knutime.service.course.CourseService;
 import com.knutime.service.user.UserService;
-import com.knutime.util.Encode;
+import com.knutime.support.Encode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

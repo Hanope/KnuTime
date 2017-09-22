@@ -36,4 +36,9 @@ public class CourseServiceImpl implements CourseService {
     public Course getCourseInfoById(Long id) {
         return courseRepository.findOne(id);
     }
+
+    @Override
+    public List<Course> getCourseList(String name) {
+        return courseRepository.findByTitleStartingWith(name);
+    }
 }

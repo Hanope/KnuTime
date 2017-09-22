@@ -1,5 +1,7 @@
 package com.knutime.domain.rating;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.knutime.domain.course.Course;
 import com.knutime.domain.user.User;
 import lombok.Getter;
@@ -31,11 +33,13 @@ public class Rating {
     @Column(name = "date_time", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Timestamp dateTime;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "fk_user_id")
     private User user;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "fk_course_id")
     private Course course;
 }

@@ -1,4 +1,4 @@
-package com.knutime.util;
+package com.knutime.support;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

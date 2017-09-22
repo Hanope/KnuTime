@@ -1,4 +1,4 @@
-package com.knutime.util;
+package com.knutime.support;
 
 public interface ErrorMessage {
 

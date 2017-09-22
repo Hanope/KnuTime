@@ -142,12 +142,6 @@
     <script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="/js/modernizr.js"></script>
 
-    <script>
-
-
-    </script>
-
-
     <script src="/js/timetable.js"></script>
 
 </body>
