@@ -12,6 +12,8 @@ public class WebController {
     public String home(Principal principal) {
         if(principal != null)
             System.out.println(principal.getName());
+
+
         return "index";
     }
 

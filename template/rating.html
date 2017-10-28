@@ -9,27 +9,25 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
     <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="assets/css/Animated-numbers-section1.css">
-    <link rel="stylesheet" href="assets/css/Box-panels.css">
-    <link rel="stylesheet" href="assets/css/Box-panels1.css">
-    <link rel="stylesheet" href="assets/css/Google-Style-Login.css">
     <link rel="stylesheet" href="assets/css/nav-sticky-top.css">
+    <link rel="stylesheet" href="assets/css/portlet.css">
     <link rel="stylesheet" href="assets/css/Pretty-Login-Form.css">
     <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
     <link rel="stylesheet" href="assets/css/Pretty-Search-Form.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/User-Payment-Overview-Rows---Panel.css">
+    <link rel="stylesheet" href="assets/css/timetable.css">
 </head>
 
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">KnuTime </a>
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="index.html">KnuTime </a>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="nav navbar-nav">
-                    <li role="presentation"><a href="#"><i class="glyphicon glyphicon-calendar"></i> 모의시간표</a></li>
-                    <li role="presentation"><a href="#"><i class="glyphicon glyphicon-pencil"></i> 강의평가 </a></li>
+                    <li role="presentation"><a href="table.html"><i class="glyphicon glyphicon-calendar"></i> 모의시간표</a></li>
+                    <li role="presentation"><a href="rating.html"><i class="glyphicon glyphicon-pencil"></i> 강의평가 </a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li role="presentation"><a href="join.html">회원가입 </a></li>
@@ -42,43 +40,39 @@
         <div class="container conatiner-rating">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="glyphicon glyphicon-search"></i> 강의평가 검색 </h3></div>
-                        <div class="panel-body">
-                            <form class="search-form">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><span><i class="glyphicon glyphicon-search"></i></span></div>
-                                    <input class="form-control" type="text" placeholder="과목명 or 교수명">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Search </button>
-                                    </div>
+                    <div>
+                        <form class="search-form">
+                            <div class="input-group">
+                                <div class="input-group-addon"><span><i class="glyphicon glyphicon-search"></i></span></div>
+                                <input class="form-control" type="text" placeholder="과목명 or 교수명">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Search </button>
                                 </div>
-                            </form>
-                            <ul class="list-group course-list-group">
-                                <li class="list-group-item course-rating-list-group">
-                                    <div class="course-list-name"><span class="course-name">문화 기술 개론 </span><span class="course-professor">김항준 </span></div>
-                                    <div class="course-list-info"><span><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star unstar"></i><i class="glyphicon glyphicon-star unstar"></i></span>
-                                        <span
-                                        class="course-semester">2016년 1학기 </span>
-                                    </div>
-                                </li>
-                                <li class="list-group-item course-rating-list-group">
-                                    <div class="course-list-name"><span class="course-name">디지털미디어아트 </span><span class="course-professor">김항준 </span></div>
-                                    <div class="course-list-info"><span><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star unstar"></i></span>
-                                        <span
-                                        class="course-semester">2016년 2학기 </span>
-                                    </div>
-                                </li>
-                                <li class="list-group-item course-rating-list-group">
-                                    <div class="course-list-name"><span class="course-name">소프트웨어와 문제해결</span><span class="course-professor">김항준 </span></div>
-                                    <div class="course-list-info"><span><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star unstar"></i><i class="glyphicon glyphicon-star unstar"></i><i class="glyphicon glyphicon-star unstar"></i></span>
-                                        <span
-                                        class="course-semester">2016년 1학기 </span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                            </div>
+                        </form>
+                        <ul class="list-group course-list-group">
+                            <li class="list-group-item course-rating-list-group">
+                                <div class="course-list-name"><span class="course-name">문화 기술 개론 </span><span class="course-professor">김항준 </span></div>
+                                <div class="course-list-info"><span><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star unstar"></i><i class="glyphicon glyphicon-star unstar"></i></span>
+                                    <span
+                                    class="course-semester">2016년 1학기 </span>
+                                </div>
+                            </li>
+                            <li class="list-group-item course-rating-list-group">
+                                <div class="course-list-name"><span class="course-name">디지털미디어아트 </span><span class="course-professor">김항준 </span></div>
+                                <div class="course-list-info"><span><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star unstar"></i></span>
+                                    <span
+                                    class="course-semester">2016년 2학기 </span>
+                                </div>
+                            </li>
+                            <li class="list-group-item course-rating-list-group">
+                                <div class="course-list-name"><span class="course-name">소프트웨어와 문제해결</span><span class="course-professor">김항준 </span></div>
+                                <div class="course-list-info"><span><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star unstar"></i><i class="glyphicon glyphicon-star unstar"></i><i class="glyphicon glyphicon-star unstar"></i></span>
+                                    <span
+                                    class="course-semester">2016년 1학기 </span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -162,12 +156,14 @@
     </div>
     </div>
     </div>
+    <div class="col-md-12"></div>
     </div>
     </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Animated-numbers-section.js"></script>
+    <script src="assets/js/timetable.js"></script>
 </body>
 
 </html>

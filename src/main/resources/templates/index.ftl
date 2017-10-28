@@ -2,61 +2,68 @@
 <html lang="ko">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Page Description">
-    <meta name="author" content="knuTime">
-    <title>Page Title</title>
-
-    <!-- 스타일 리셋 -->
-    <link href="/css/reset.css" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="/webjars/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- 내비게이션 바 스타일 -->
-    <link href="/css/knutime.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>knutime</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/assets/css/Animated-numbers-section1.css">
+    <link rel="stylesheet" href="/assets/css/nav-sticky-top.css">
+    <link rel="stylesheet" href="/assets/css/portlet.css">
+    <link rel="stylesheet" href="/assets/css/Pretty-Login-Form.css">
+    <link rel="stylesheet" href="/assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="/assets/css/Pretty-Search-Form.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/timetable.css">
 </head>
 <body>
 
     <#-- 내비게이션 바 include -->
     <#include "./navbar.ftl">
 
-    <!-- carousel -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-        </ol>
-
-        <!-- Wrapper for slide -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="/images/1.png">
+    <section class="slider">
+        <div class="carousel slide" data-ride="carousel" data-interval="3000" id="carousel-1">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active"><img src="/assets/img/1.png" alt="Slide Image"></div>
+                <div class="item"><img src="/assets/img/2.png" alt="Slide Image"></div>
             </div>
-            <div class="item">
-                <img src="/images/2.png">
+            <div class="hidden"><a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel-1" role="button"
+                                                                                                                                                                                                                data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a></div>
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-1" data-slide-to="1"></li>
+            </ol>
+        </div>
+    </section>
+    <section class="wrapper-numbers">
+        <div class="container">
+            <div class="row countup text-center">
+                <div class="col-md-8 col-md-offset-2 header-numbers">
+                    <h1>KnuTime </h1>
+                    <p>수강신청 전 쉽고 빠르게 모의 시간표를 만들어 보세요.</p>
+                </div>
+                <div class="col-md-3 col-sm-6 column">
+                    <p><i class="icon-graduation" aria-hidden="true"></i></p>
+                    <p> <span class="count">2543</span></p>
+                    <h2>등록된 강의 </h2></div>
+                <div class="col-md-3 col-sm-6 column">
+                    <p><i class="icon-pencil" aria-hidden="true"></i></p>
+                    <p> <span class="count replay">15234 </span></p>
+                    <h2>작성된 강의평 </h2></div>
+                <div class="col-md-3 col-sm-6 column">
+                    <p><i class="icon-calendar" aria-hidden="true"></i></p>
+                    <p> <span class="count">1423 </span></p>
+                    <h2>등록된 시간표 </h2></div>
+                <div class="col-md-3 col-sm-6 column">
+                    <p><i class="icon-user" aria-hidden="true"></i></p>
+                    <p> <span class="count">2000 </span></p>
+                    <h2>총 이용자 </h2></div>
             </div>
         </div>
-    </div>
-
-    <!-- 페이지 링크 -->
-    <div class="container-fluid link-container">
-
-
-    </div>
-
-    <!-- jQuery javascript 로드-->
-    <script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
-    <!-- bootstrap javascript 로드 -->
-    <script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </section>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/Animated-numbers-section.js"></script>
+    <script src="/assets/js/timetable.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>knutime</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="assets/css/Animated-numbers-section1.css">
+    <link rel="stylesheet" href="assets/css/nav-sticky-top.css">
+    <link rel="stylesheet" href="assets/css/portlet.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Login-Form.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Search-Form.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/timetable.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="index.html">K-time </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a href="table.html"><i class="glyphicon glyphicon-calendar"></i> 모의시간표</a></li>
+                    <li role="presentation"><a href="rating.html"><i class="glyphicon glyphicon-pencil"></i> 강의평가 </a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="join.html">회원가입 </a></li>
+                    <li role="presentation"><a href="login.html"><i class="glyphicon glyphicon-log-in"></i> 로그인 </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="container container-timetable">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="cd-schedule js-full">
+    <div class="timeline">
+        <ul>
+            <li><span>09:00</span></li>
+            <li><span>09:30</span></li>
+            <li><span>10:00</span></li>
+            <li><span>10:30</span></li>
+            <li><span>11:00</span></li>
+            <li><span>11:30</span></li>
+            <li><span>12:00</span></li>
+            <li><span>12:30</span></li>
+            <li><span>13:00</span></li>
+            <li><span>13:30</span></li>
+            <li><span>14:00</span></li>
+            <li><span>14:30</span></li>
+            <li><span>15:00</span></li>
+            <li><span>15:30</span></li>
+            <li><span>16:00</span></li>
+            <li><span>16:30</span></li>
+            <li><span>17:00</span></li>
+            <li><span>17:30</span></li>
+            <li><span>18:00</span></li>
+        </ul>
+    </div>
+    <!-- .timeline -->
+    <div class="events">
+        <ul>
+            <li class="events-group">
+                <div class="top-info"><span>월요일</span></div>
+                <ul id="event-mon">
+                    <li class="single-event event-2" data-start="16:30" data-end="18:00" data-event="event-2" style="top: 749px; height: 151px;">
+                        <input type="hidden" class="course-id" value="2"><span class="event-close">x</span><a href="#"><span class="event-date">16:30 - 18:00</span><span class="class-name">고고학실습</span><span class="professor-name">이성주</span><span class="class-room">제4합동강의동403</span></a></li>
+                    <li class="single-event event-3" data-start="09:00" data-end="10:30" data-event="event-3" style="top: -1px; height: 151px;">
+                        <input type="hidden" class="course-id" value="3"><span class="event-close">x</span><a href="#"><span class="event-date">09:00 - 10:30</span><span class="class-name">문화 기술 개론</span><span class="professor-name">김항준</span><span class="class-room">공대9호관418</span></a></li>
+                    <li class="single-event event-5" data-start="10:30" data-end="12:00" data-event="event-5" style="top: 149px; height: 151px;">
+                        <input type="hidden" class="course-id" value="5"><span class="event-close">x</span><a href="#"><span class="event-date">10:30 - 12:00</span><span class="class-name">실용화법</span><span class="professor-name">정수진</span><span class="class-room">공대9호관417</span></a></li>
+                </ul>
+            </li>
+            <li class="events-group">
+                <div class="top-info"><span>화요일</span></div>
+                <ul id="event-tue">
+                    <li class="single-event event-1" data-start="16:30" data-end="18:00" data-event="event-1" style="top: 749px; height: 151px;">
+                        <input type="hidden" class="course-id" value="1"><span class="event-close">x</span><a href="#"><span class="event-date">16:30 - 18:00</span><span class="class-name">동물생리학</span><span class="professor-name">손종경</span><span class="class-room">생물학관318</span></a></li>
+                    <li class="single-event event-4" data-start="10:30" data-end="12:00" data-event="event-4" style="top: 149px; height: 151px;">
+                        <input type="hidden" class="course-id" value="4"><span class="event-close">x</span><a href="#"><span class="event-date">10:30 - 12:00</span><span class="class-name">물리학 I</span><span class="professor-name">이성엽</span><span class="class-room">공대9호관417</span></a></li>
+                </ul>
+            </li>
+            <li class="events-group">
+                <div class="top-info"><span>수요일</span></div>
+                <ul id="event-wed">
+                    <li class="single-event event-2" data-start="16:30" data-end="18:00" data-event="event-2" style="top: 749px; height: 151px;">
+                        <input type="hidden" class="course-id" value="2"><span class="event-close">x</span><a href="#"><span class="event-date">16:30 - 18:00</span><span class="class-name">고고학실습</span><span class="professor-name">이성주</span><span class="class-room">제4합동강의동403</span></a></li>
+                    <li class="single-event event-3" data-start="15:00" data-end="16:30" data-event="event-3" style="top: 599px; height: 151px;">
+                        <input type="hidden" class="course-id" value="3"><span class="event-close">x</span><a href="#"><span class="event-date">15:00 - 16:30</span><span class="class-name">문화 기술 개론</span><span class="professor-name">김항준</span><span class="class-room">공대9호관418</span></a></li>
+                </ul>
+            </li>
+            <li class="events-group">
+                <div class="top-info"><span>목요일</span></div>
+                <ul id="event-thu">
+                    <li class="single-event event-1" data-start="16:30" data-end="18:00" data-event="event-1" style="top: 749px; height: 151px;">
+                        <input type="hidden" class="course-id" value="1"><span class="event-close">x</span><a href="#"><span class="event-date">16:30 - 18:00</span><span class="class-name">동물생리학</span><span class="professor-name">손종경</span><span class="class-room">생물학관318</span></a></li>
+                    <li class="single-event event-4" data-start="09:00" data-end="10:30" data-event="event-4" style="top: -1px; height: 151px;">
+                        <input type="hidden" class="course-id" value="4"><span class="event-close">x</span><a href="#"><span class="event-date">09:00 - 10:30</span><span class="class-name">물리학 I</span><span class="professor-name">이성엽</span><span class="class-room">공대9호관417</span></a></li>
+                </ul>
+            </li>
+            <li class="events-group">
+                <div class="top-info"><span>금요일</span></div>
+                <ul id="event-fri">
+                    <li class="single-event event-5" data-start="09:00" data-end="10:30" data-event="event-5" style="top: -1px; height: 151px;">
+                        <input type="hidden" class="course-id" value="5"><span class="event-close">x</span><a href="#"><span class="event-date">09:00 - 10:30</span><span class="class-name">실용화법</span><span class="professor-name">정수진</span><span class="class-room">공대9호관417</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="event-modal">
+        <header class="header">
+            <div class="content">
+                <h3 class="class-name"></h3>
+                <h5 class="professor-name"></h5>
+                <h5 class="class-room"></h5>
+            </div>
+            <div class="header-bg"></div>
+        </header>
+        <div class="body">
+            <div class="event-info"></div>
+            <div class="body-bg"></div>
+        </div>
+        <a href="#" class="close">Close</a>
+    </div>
+    <div class="cover-layer"></div>
+</div>
+                </div>
+                <div class="col-md-4">
+                    <form class="search-form">
+                        <div class="input-group">
+                            <div class="input-group-addon"><span><i class="glyphicon glyphicon-search"></i></span></div>
+                            <input class="form-control" type="text" placeholder="과목명 or 교수명">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="button">Search </button>
+                            </div>
+                        </div>
+                    </form>
+                    <ul class="list-group course-list-group">
+                        <li class="list-group-item course-rating-list-group">
+                            <div class="course-list-name"><span class="course-name">문화 기술 개론 </span><span class="course-professor">김항준 </span></div>
+                            <div class="course-list-info"><span><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star unstar"></i><i class="glyphicon glyphicon-star unstar"></i></span>
+                                <span
+                                class="course-semester">2016년 1학기 </span>
+                            </div>
+                        </li>
+                        <li class="list-group-item course-rating-list-group">
+                            <div class="course-list-name"><span class="course-name">디지털미디어아트 </span><span class="course-professor">김항준 </span></div>
+                            <div class="course-list-info"><span><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star unstar"></i></span>
+                                <span
+                                class="course-semester">2016년 2학기 </span>
+                            </div>
+                        </li>
+                        <li class="list-group-item course-rating-list-group">
+                            <div class="course-list-name"><span class="course-name">소프트웨어와 문제해결</span><span class="course-professor">김항준 </span></div>
+                            <div class="course-list-info"><span><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star star"></i><i class="glyphicon glyphicon-star unstar"></i><i class="glyphicon glyphicon-star unstar"></i><i class="glyphicon glyphicon-star unstar"></i></span>
+                                <span
+                                class="course-semester">2016년 1학기 </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Animated-numbers-section.js"></script>
+    <script src="assets/js/timetable.js"></script>
+</body>
+
+</html>
